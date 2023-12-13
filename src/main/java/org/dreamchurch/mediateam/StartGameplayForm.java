@@ -48,10 +48,29 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
     private JLabel catInfoNameLabel1, catInfoNameLabel2, catInfoNameLabel3, catInfoNameLabel4, catInfoTypeLabel;
     private JLabel catInfoNameCat, catInfoTypeCat;
-    private Font petDetailsFont;
+    private Font petDetailsFont, userInputDetailsFont;
     private JFrame petInformationFrame;
     private JPanel cat1Panel, cat2Panel, cat3Panel, cat4Panel, catPicPanel;
     private JButton editCatInfo, closeCatInfo;
+    private JTextField cat1TxtName, cat2TxtName, cat3TxtName, cat4TxtName;
+
+    /*
+        GLOBAL VARIABLES THAT MIGHT BE USED FOR OTHER CLASS
+     */
+
+    CatClass myCat;
+
+
+
+
+    /*
+
+
+
+
+
+
+     */
 
     public StartGameplayForm(){
         setSize(1300, 700);
@@ -139,6 +158,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        /*
+            THIS ACTION LISTENER STATEMENTS ARE INSIDE THE STARTGAMEPLAYFORM FRAME
+         */
         if (e.getSource().equals(mainMenuButton)) {
 
             try {
@@ -156,18 +178,36 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             PetShop();
         }
+
+        /*
+            THIS ACTION LISTENER STATEMENTS ARE INSIDE THE PETSHOP FRAME
+         */
+
         if (e.getSource().equals(cat1Buy)){
             isCatBought1 = true;
             CatInfo();
-            System.out.println("Check logic ");
+            System.out.println("Check logic");
 
         }
         if (e.getSource().equals(buyCat)){
             catInfo.dispose();
             PetShop.dispose();
-            System.out.println("Check buyCat Button ");
 
+            CatClass myCat = new CatClass(userCatName.getText());
+
+
+            myCat.testCat();
             SpawnCat();
+        }
+
+        /*
+            THIS ACTION LISTENER STATEMETNS ARE INSIDE THE PETINFORMATION FRAME
+         */
+        if (e.getSource().equals(editCatInfo)) {
+
+        }
+        if(e.getSource().equals(closeCatInfo)){
+            petInformationFrame.dispose();
         }
 
     }
@@ -423,6 +463,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             FONT
          */
         petDetailsFont = new Font("Comic Sans MS", Font.PLAIN, 20);
+        userInputDetailsFont = new Font("Comic Sans MS", Font.PLAIN, 30);
         /*
             PET BUTTONS
          */
@@ -431,7 +472,28 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         editCatInfo.setBounds(190, 590, 100, 50);
         closeCatInfo = new JButton("CLOSE");
         closeCatInfo.setFont(petDetailsFont);
-        closeCatInfo.setBounds(300, 590, 100, 50);
+        closeCatInfo.setBounds(290, 590, 100, 50);
+
+        /*
+            PET TEXTFIELD
+         */
+        cat1TxtName = new JTextField();
+        cat1TxtName.setBounds(0, 0, 200, 30); // Set explicit size
+        cat1TxtName.setFont(userInputDetailsFont);
+
+        cat2TxtName = new JTextField();
+        cat2TxtName.setBounds(0, 0, 200, 30);
+        cat2TxtName.setFont(userInputDetailsFont);
+
+        cat3TxtName = new JTextField();
+        cat3TxtName.setBounds(0, 0, 200, 30);
+        cat3TxtName.setFont(userInputDetailsFont);
+
+        cat4TxtName = new JTextField();
+        cat4TxtName.setBounds(0, 0, 200, 30);
+        cat4TxtName.setFont(userInputDetailsFont);
+
+
 
         /*
             PET LABELS
@@ -516,6 +578,16 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         cat4Panel.add(catInfoNameLabel4);
         //cat1Panel.add(catInfoTypeLabel);
 
+        cat1Panel.add(cat1TxtName);
+        cat2Panel.add(cat2TxtName);
+        cat3Panel.add(cat3TxtName);
+        cat4Panel.add(cat4TxtName);
+
+        cat1TxtName.setEditable(false);
+        cat2TxtName.setEditable(false);
+        cat3TxtName.setEditable(false);
+        cat4TxtName.setEditable(false);
+
         petInformationFrame.add(editCatInfo);
         petInformationFrame.add(closeCatInfo);
 
@@ -524,6 +596,14 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         //DEAD END
     }
+
+
+    /*
+        THIS AREA IS ONLY FOR CRUD OPERATIONS
+     */
+
+
+
 
 
 
