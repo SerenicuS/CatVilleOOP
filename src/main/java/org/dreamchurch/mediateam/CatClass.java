@@ -9,6 +9,10 @@ public class CatClass {
         catName = selectedText;
     }
 
+    public CatClass(){
+        catName = "";
+    }
+
     public void testCat(){
         System.out.println("The cat name is" + catName);
     }
