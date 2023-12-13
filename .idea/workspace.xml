@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" afterDir="false" />
-    </list>
+    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="Established the JComponents of petInformationFrame. Next Goal should be the&#10;functionalities of the Edit BUttons and Close" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702435194565</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Established the JComponents of petInformationFrame. Next Goal should be the&#10;functionalities of the Edit BUttons and Close">
+      <option name="closed" value="true" />
+      <created>1702444061657</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702444061657</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +112,7 @@
     <MESSAGE value="First None Fix, Didn't add anything." />
     <MESSAGE value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close" />
     <MESSAGE value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here" />
-    <option name="LAST_COMMIT_MESSAGE" value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here" />
+    <MESSAGE value="Established the JComponents of petInformationFrame. Next Goal should be the&#10;functionalities of the Edit BUttons and Close" />
+    <option name="LAST_COMMIT_MESSAGE" value="Established the JComponents of petInformationFrame. Next Goal should be the&#10;functionalities of the Edit BUttons and Close" />
   </component>
 </project>
