@@ -70,7 +70,7 @@ Main extends JFrame implements ActionListener, WindowListener {
 
 
 
-    /*
+    /*\
         MAKING THE JCOMPONENTS ALIVE
      */
     public Main() {

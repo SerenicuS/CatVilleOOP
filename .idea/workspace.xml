@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="This Update is now good temporarily, after checking this proceed in implementing CRUD operations in creating cats&#10;&#10;for more detailed on what-to-do:&#10;&#10;1. Cats Bought should be placed correctly(MAXIMUM is 4)&#10;2. Finish the synchronization of creating cats in Line 196&#10;3. In PETINFORMATION FRAME, it should properly implement the CRUD by editing the cats if the mouse clicks the panel of the said Cat.&#10;&#10;&#10;This is the main instructions and more instructions soon.">
+    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/CatClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/CatClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -45,9 +39,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2ZSrzsqUtRj4OlICvMUHji1JzgY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -56,17 +54,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/CatVille&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Admin/IdeaProjects/Pet Management System",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -100,23 +96,7 @@
       <option name="project" value="LOCAL" />
       <updated>1702435194565</updated>
     </task>
-    <task id="LOCAL-00004" summary="Established the JComponents of petInformationFrame. Next Goal should be the&#10;functionalities of the Edit BUttons and Close">
-      <option name="closed" value="true" />
-      <created>1702444061657</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1702444061657</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Established the JComponents of petInformationFrame. Next Goal should be the&#10;functionalities of the Edit BUttons and Close">
-      <option name="closed" value="true" />
-      <created>1702446586369</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1702446586369</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,7 +115,6 @@
     <MESSAGE value="First None Fix, Didn't add anything." />
     <MESSAGE value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close" />
     <MESSAGE value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here" />
-    <MESSAGE value="Established the JComponents of petInformationFrame. Next Goal should be the&#10;functionalities of the Edit BUttons and Close" />
-    <option name="LAST_COMMIT_MESSAGE" value="Established the JComponents of petInformationFrame. Next Goal should be the&#10;functionalities of the Edit BUttons and Close" />
+    <option name="LAST_COMMIT_MESSAGE" value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here" />
   </component>
 </project>
