@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here">
-      <change afterPath="$PROJECT_DIR$/GameplayFiles/GameplayBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PET CATS/Cat1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PET CATS/Cat2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PET CATS/Cat3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PET CATS/Cat4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StartMenuFiles/Gamebackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/GameplayFiles/GameplayBackground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/PET CATS/Cat1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/PET CATS/Cat2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/PET CATS/Cat3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/PET CATS/Cat4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/StartMenuFiles/Gamebackground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/src/main/java/org/dreamchurch/mediateam/BackgroundPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/src/main/java/org/dreamchurch/mediateam/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/target/classes/org/dreamchurch/mediateam/BackgroundPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/target/classes/org/dreamchurch/mediateam/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CatVille/target/classes/org/dreamchurch/mediateam/StartGameplayForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +35,9 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="2ZSrzsqUtRj4OlICvMUHji1JzgY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -71,7 +50,9 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Admin/Desktop/CatVille"
   }
 }]]></component>

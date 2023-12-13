@@ -46,11 +46,12 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
      */
 
-    private JLabel catInfoNameLabel, catInfoTypeLabel;
+    private JLabel catInfoNameLabel1, catInfoNameLabel2, catInfoNameLabel3, catInfoNameLabel4, catInfoTypeLabel;
     private JLabel catInfoNameCat, catInfoTypeCat;
     private Font petDetailsFont;
     private JFrame petInformationFrame;
     private JPanel cat1Panel, cat2Panel, cat3Panel, cat4Panel, catPicPanel;
+    private JButton editCatInfo, closeCatInfo;
 
     public StartGameplayForm(){
         setSize(1300, 700);
@@ -418,10 +419,42 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     }
 
     public void PetInformationInstantiation() {
-        catInfoNameLabel = new JLabel("Cat 1 Name: ");
-        catInfoNameLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
-        catInfoTypeLabel = new JLabel("Cat 1 Type: ");
-        catInfoTypeLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
+        /*
+            FONT
+         */
+        petDetailsFont = new Font("Comic Sans MS", Font.PLAIN, 20);
+        /*
+            PET BUTTONS
+         */
+        editCatInfo = new JButton("EDIT");
+        editCatInfo.setFont(petDetailsFont);
+        editCatInfo.setBounds(190, 590, 100, 50);
+        closeCatInfo = new JButton("CLOSE");
+        closeCatInfo.setFont(petDetailsFont);
+        closeCatInfo.setBounds(300, 590, 100, 50);
+
+        /*
+            PET LABELS
+         */
+        catInfoNameLabel1 = new JLabel("Cat 1 Name: ");
+        catInfoNameLabel1.setFont(petDetailsFont);
+        //catInfoTypeLabel = new JLabel("Cat 1 Type: ");
+        //catInfoTypeLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
+
+        catInfoNameLabel2 = new JLabel("Cat 2 Name: ");
+        catInfoNameLabel2.setFont(petDetailsFont);
+        //catInfoTypeLabel = new JLabel("Cat 1 Type: ");
+        //catInfoTypeLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
+
+        catInfoNameLabel3 = new JLabel("Cat 3 Name: ");
+        catInfoNameLabel3.setFont(petDetailsFont);;
+        // catInfoTypeLabel = new JLabel("Cat 1 Type: ");
+        //setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
+
+        catInfoNameLabel4 = new JLabel("Cat 4 Name: ");
+        catInfoNameLabel4.setFont(petDetailsFont);
+        //catInfoTypeLabel = new JLabel("Cat 1 Type: ");
+        //catInfoTypeLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
 
 
         /*
@@ -432,8 +465,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         cat1Panel.setBackground(Color.RED);
         cat1Panel.setBounds(150, 10, 350, 130);
 
-        cat1Panel.add(catInfoNameLabel);
-        cat1Panel.add(catInfoTypeLabel);
+
 
         cat2Panel = new JPanel();
         cat2Panel.setLayout(new BoxLayout(cat2Panel, BoxLayout.Y_AXIS));
@@ -461,12 +493,34 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         catPicPanel.setBackground(Color.BLACK);
         catPicPanel.setBounds(0, 10, 140, 570);
 
+
+
+
+
+
+        /*
+            ADDING THE COMPONENTS SECTION
+
+         */
+
         petInformationFrame.add(catPicPanel);
 
         petInformationFrame.add(cat1Panel);
         petInformationFrame.add(cat2Panel);
         petInformationFrame.add(cat3Panel);
         petInformationFrame.add(cat4Panel);
+
+        cat1Panel.add(catInfoNameLabel1);
+        cat2Panel.add(catInfoNameLabel2);
+        cat3Panel.add(catInfoNameLabel3);
+        cat4Panel.add(catInfoNameLabel4);
+        //cat1Panel.add(catInfoTypeLabel);
+
+        petInformationFrame.add(editCatInfo);
+        petInformationFrame.add(closeCatInfo);
+
+
+
 
         //DEAD END
     }
