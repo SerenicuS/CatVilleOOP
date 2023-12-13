@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here">
+      <change afterPath="$PROJECT_DIR$/GameplayFiles/GameplayBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PET CATS/Cat1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PET CATS/Cat2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PET CATS/Cat3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PET CATS/Cat4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StartMenuFiles/Gamebackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/GameplayFiles/GameplayBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/PET CATS/Cat1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/PET CATS/Cat2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/PET CATS/Cat3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/PET CATS/Cat4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/StartMenuFiles/Gamebackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/src/main/java/org/dreamchurch/mediateam/BackgroundPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/src/main/java/org/dreamchurch/mediateam/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/target/classes/org/dreamchurch/mediateam/BackgroundPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/target/classes/org/dreamchurch/mediateam/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CatVille/target/classes/org/dreamchurch/mediateam/StartGameplayForm.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bb3ad671-033e-4156-9244-23876738cad0" />
+        <option name="url" value="https://github.com/SerenicuS/CatVilleOOP.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ZSrzsqUtRj4OlICvMUHji1JzgY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Admin/Desktop/CatVille"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="" />
+      <created>1702426588174</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702426588174</updated>
+    </task>
+    <task id="LOCAL-00001" summary="First None Fix, Didn't add anything.">
+      <option name="closed" value="true" />
+      <created>1702426948384</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702426948384</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close">
+      <option name="closed" value="true" />
+      <created>1702433956335</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702433956335</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here">
+      <option name="closed" value="true" />
+      <created>1702435194565</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702435194565</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="First None Fix, Didn't add anything." />
+    <MESSAGE value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close" />
+    <MESSAGE value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here" />
+    <option name="LAST_COMMIT_MESSAGE" value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here" />
+  </component>
+</project>
