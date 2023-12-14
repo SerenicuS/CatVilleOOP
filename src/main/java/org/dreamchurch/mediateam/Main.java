@@ -7,6 +7,7 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import javax.sound.sampled.*;
 /*
 This notepad is used to plan the Cat Meme Simulation program for OOP subject.
 
@@ -51,8 +52,7 @@ when it is put inside the startgameplayform it will show, regardless
 
  */
 
-public class
-Main extends JFrame implements ActionListener, WindowListener {
+public class Main extends JFrame implements ActionListener, WindowListener {
     /*
      DECLARATION OF JCOMPONENTS
      */
@@ -87,6 +87,10 @@ Main extends JFrame implements ActionListener, WindowListener {
         }
         // CALLING THE JCOMPONENTS FUNCTIONS
         StartMenuDeclaration();
+
+        String filePath = "Music/menumusic.wav";
+        PlayMusicInBackground(filePath);
+
 
 
         //SETTING THE LAYOUT FOR MENU PANEL
@@ -222,5 +226,55 @@ Main extends JFrame implements ActionListener, WindowListener {
     @Override
     public void windowDeactivated(WindowEvent e) {
 
+    }
+    public void PlayMusicInBackground(String filePath) {
+        SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+            @Override
+            protected Void doInBackground() {
+                try {
+                    while(true) {
+                        PlayMusic(filePath);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        };
+
+        worker.execute();
+    }
+
+    public void PlayMusic(String filePath){
+        try {
+            // Open the audio file
+            File audioFile = new File(filePath);
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+
+            // Get the format of the audio file
+            AudioFormat format = audioStream.getFormat();
+
+            // Create a data line to play the audio
+            DataLine.Info info = new DataLine.Info(SourceDataLine.class, format);
+            SourceDataLine line = (SourceDataLine) AudioSystem.getLine(info);
+            line.open(format);
+            line.start();
+
+            // Read the audio data from the input stream and write it to the line
+            byte[] buffer = new byte[4096];
+            int bytesRead = 0;
+            while ((bytesRead = audioStream.read(buffer)) != -1) {
+                line.write(buffer, 0, bytesRead);
+            }
+
+            // Wait for the line to finish playing before closing it
+            line.drain();
+            line.close();
+
+            // Close the audio input stream
+            audioStream.close();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
     }
 }
