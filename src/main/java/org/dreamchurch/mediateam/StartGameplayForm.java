@@ -8,6 +8,7 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 
 public class StartGameplayForm extends JFrame implements ActionListener, WindowListener, MouseListener {
     /*
@@ -37,15 +38,22 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     private JButton buyCat, cancelBuy;
     private JLabel catName;
     private JTextField userCatName;
-    private JPanel catInfoPanel, catInfoButtonPanel;
+    private JPanel catInfoPanel, catInfoButtonPanel, catInfoImagePanel;
 
     private boolean isCatBought1, isCatBought2, isCatBought3, isCatBought4;
+
+    ImageIcon scaledImageofCatFinal, boughtCatImage;
+    Image scaledImagerCat;
+
+    private JLabel boughtCatShowIcon;
+
 
 
     /*
         Pet Information Instantiation JComponents
 
      */
+
 
     private JLabel catInfoNameLabel1, catInfoNameLabel2, catInfoNameLabel3, catInfoNameLabel4, catInfoTypeLabel;
     private JLabel catInfoNameCat, catInfoTypeCat;
@@ -81,6 +89,13 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     private String[] catStorage;
     private int counter = 0;
 
+    /*
+        CAT EDIT VARIABLES
+     */
+    private boolean isCat1Edited;
+    private boolean isCat2Edited;
+    private boolean isCat3Edited;
+    private boolean isCat4Edited;
 
 
     /*
@@ -98,6 +113,10 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         StartGameplayFormComponentsDeclaration();
         PetInformationFrame();
+        CatInfo();
+
+
+
 
         try {
             BufferedImage backgroundImage = ImageIO.read(new File("GameplayFiles/GameplayBackground.png"));
@@ -214,27 +233,45 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         if (e.getSource().equals(cat1Buy)){
             isCatBought1 = true;
 
-            CatInfo();
-
+            catInfo.setVisible(true);
+            LoadImageCat();
+            catInfo.revalidate();
+            catInfo.repaint();
             System.out.println("Check logic");
+
 
 
         }
         if (e.getSource().equals(cat2Buy)){
             isCatBought2 = true;
-            CatInfo();
+
+            catInfo.setVisible(true);
+            LoadImageCat();
+            catInfo.revalidate();
+            catInfo.repaint();
             System.out.println("Check logic");
+
 
         }
         if (e.getSource().equals(cat3Buy)){
             isCatBought3 = true;
-            CatInfo();
+
+            catInfo.setVisible(true);
+
+            LoadImageCat();
+            catInfo.revalidate();
+            catInfo.repaint();
             System.out.println("Check logic");
 
         }
         if (e.getSource().equals(cat4Buy)){
             isCatBought4 = true;
-            CatInfo();
+
+            catInfo.setVisible(true);
+
+            LoadImageCat();
+            catInfo.revalidate();
+            catInfo.repaint();
             System.out.println("Check logic");
 
         }
@@ -242,6 +279,15 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             CatTransaction(100);
         }
         if(e.getSource().equals(cancelBuy)){
+
+
+            isCatBought1 = false;
+            isCatBought2 = false;
+            isCatBought3 = false;
+            isCatBought4 = false;
+
+            boughtCatShowIcon.setVisible(false);
+
             catInfo.dispose();
         }
 
@@ -253,6 +299,11 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         }
         if(e.getSource().equals(closeCatInfo)){
             editCatInfo.setEnabled(false);
+
+            isCat1Edited = false;
+            isCat2Edited = false;
+            isCat3Edited = false;
+            isCat4Edited = false;
             petInformationFrame.dispose();
         }
 
@@ -260,10 +311,13 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             THIS ACTION LISTENER IS FOR THE EDIT THE CAT INFO
          */
         if(e.getSource().equals(saveCat)){
-
+            CatEditFeature();
+            System.out.println("Check saveCat clicked");
         }
         if(e.getSource().equals(cancelSave)){
+            System.out.println("Check cancelSave clicked");
             editTool.dispose();
+            System.out.println("Check cancelSave clicked");
         }
 
 
@@ -277,21 +331,38 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         System.out.println("Check Mouse Event ");
         if (e.getSource().equals(cat1Panel) && !cat1TxtName.getText().isEmpty()) {
             editCatInfo.setEnabled(true);
+            isCat1Edited = true;
+            isCat2Edited = false;
+            isCat3Edited = false;
+            isCat4Edited = false;
+
 
             System.out.println("Check MouseCLicked in cat1Panel");
         }
         if (e.getSource().equals(cat2Panel) && !cat2TxtName.getText().isEmpty()) {
             editCatInfo.setEnabled(true);
+            isCat1Edited = false;
+            isCat2Edited = true;
+            isCat3Edited = false;
+            isCat4Edited = false;
 
             System.out.println("Check MouseCLicked in cat2Panel");
         }
         if (e.getSource().equals(cat3Panel) && !cat3TxtName.getText().isEmpty()) {
             editCatInfo.setEnabled(true);
+            isCat1Edited = false;
+            isCat2Edited = false;
+            isCat3Edited = true;
+            isCat4Edited = false;
 
             System.out.println("Check MouseCLicked in cat3Panel");
         }
         if (e.getSource().equals(cat4Panel) && !cat4TxtName.getText().isEmpty()) {
             editCatInfo.setEnabled(true);
+            isCat1Edited = false;
+            isCat2Edited = false;
+            isCat3Edited = false;
+            isCat4Edited = true;
 
             System.out.println("Check MouseCLicked in cat4Panel");
         }
@@ -326,8 +397,20 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     public void windowClosing(WindowEvent e) {
         if(e.getSource().equals(petInformationFrame)){
             editCatInfo.setEnabled(false);
-
+            isCat1Edited = false;
+            isCat2Edited = false;
+            isCat3Edited = false;
+            isCat4Edited = false;
             petInformationFrame.dispose();
+        }
+        if(e.getSource().equals(catInfo)){
+            boughtCatShowIcon.setVisible(false);
+            isCatBought1 = false;
+            isCatBought2 = false;
+            isCatBought3 = false;
+            isCatBought4 = false;
+            catInfo.dispose();
+
         }
     }
 
@@ -445,12 +528,16 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     public void CatInfo() {
         catInfo = new JFrame();
         catInfoPanel = new JPanel();
+        catInfoImagePanel = new JPanel();
         catInfo.setTitle("Cat Info");
         catInfo.setSize(500, 300);
         catInfo.setLayout(new BorderLayout(2, 2));
         catInfo.add(catInfoPanel, BorderLayout.CENTER);  // Changed to BorderLayout.CENTER
+        catInfo.add(catInfoImagePanel, BorderLayout.WEST);
+
+
         catInfoInstantiation();
-        catInfo.setVisible(true);
+
         catInfo.setLocationRelativeTo(null);
         catInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
@@ -458,9 +545,15 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     public void catInfoInstantiation() {
         catInfoFont = new Font("Comic Sans MS", Font.PLAIN, 20);
 
+
+
+
+
         // DECLARING the BUTTONS
         buyCat = new JButton("BUY");
         cancelBuy = new JButton("CANCEL");
+
+
 
         // DECLARING THE LABELS
         catName = new JLabel("Cat Name: ");
@@ -492,7 +585,12 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         //ADDING ACTION LISTENER
         buyCat.addActionListener(this);
         cancelBuy.addActionListener(this);
+
+        //ADDING WINDOWS LISTENER
+        catInfo.addWindowListener(this);
     }
+
+
 
     //SPAWNING THE CAT
     public void SpawnCat(){
@@ -509,9 +607,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             JLabel boughtCatShow = new JLabel(scaledImageofCat);
             boughtCatShow.setBounds(70, 430, 200, 200);
 
-
-            System.out.println("Check spawnCat()");
             add(boughtCatShow);
+            System.out.println("Check spawnCat()");
+
             revalidate();
             repaint();
             System.out.println("Visible?: " + boughtCatShow.isVisible());
@@ -785,6 +883,14 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             SpawnCat();
             SetUserPutName(catStorage[counter]);
 
+            userCatName.setText("");
+            isCatBought1 = false;
+            isCatBought2 = false;
+            isCatBought3 = false;
+            isCatBought4 = false;
+
+            boughtCatShowIcon.setVisible(false);
+
             counter++;
 
         }
@@ -937,12 +1043,112 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         //ADDING ACTION LISTENER
         saveCat.addActionListener(this);
         cancelSave.addActionListener(this);
+
+        System.out.println("The saveCat and cancelSave have actionlistener");
+    }
+    /*
+        Actual EDIT of the CAT'S Name
+     */
+
+    public void CatEditFeature() {
+        if (isCat1Edited) {
+            catStorage[0] = catEditedTextField.getText();
+
+            JOptionPane.showMessageDialog(null, "The Cat's name has been edited successfully!");
+            editFeature(catEditedTextField.getText(), cat1TxtName);
+            editTool.dispose();
+        }
+        if (isCat2Edited) {
+            catStorage[1] = catEditedTextField.getText();
+
+            JOptionPane.showMessageDialog(null, "The Cat's name has been edited successfully!");
+            editFeature(catEditedTextField.getText(), cat2TxtName);
+            editTool.dispose();
+        }
+        if (isCat3Edited) {
+            catStorage[2] = catEditedTextField.getText();
+
+            JOptionPane.showMessageDialog(null, "The Cat's name has been edited successfully!");
+            editFeature(catEditedTextField.getText(), cat3TxtName);
+            editTool.dispose();
+        }
+        if (isCat4Edited) {
+            catStorage[3] = catEditedTextField.getText();
+
+            JOptionPane.showMessageDialog(null, "The Cat's name has been edited successfully!");
+            editFeature(catEditedTextField.getText(), cat4TxtName);
+            editTool.dispose();
+        }
+    }
+    public void editFeature(String nameParameter, JTextField txtParameter){
+        editCatInfo.setEnabled(false);
+        txtParameter.setText(nameParameter);
     }
 
+    /*
+        THIS SECTION IS FOR MUSIC OF THE PROGRAM
+     */
+    public void PlayMusic(){
 
+    }
 
+    /*
+        THIS SECTION IS FOR MISCELLANOUS
+     */
+    public void LoadImageCat(){ // Loading the iamge of cats inside the CatInfo where you enter its details
+        System.out.println("Check loadImageCat");
 
+        if(isCatBought1){
 
+            System.out.println("Check image load");
+            boughtCatImage = new ImageIcon("PET CATS/Cat1.png");
+            scaledImagerCat = boughtCatImage.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+            scaledImageofCatFinal = new ImageIcon(scaledImagerCat);
+
+            boughtCatShowIcon = new JLabel(scaledImageofCatFinal);
+            boughtCatShowIcon.setBounds(70, 430, 200, 200);
+            catInfo.add(boughtCatShowIcon, BorderLayout.WEST);
+
+            boughtCatShowIcon.setVisible(true);
+        }
+        if(isCatBought2){
+            System.out.println("Check image load");
+            boughtCatImage = new ImageIcon("PET CATS/Cat2.png");
+            scaledImagerCat = boughtCatImage.getImage().getScaledInstance(230, 250, Image.SCALE_SMOOTH);
+            scaledImageofCatFinal = new ImageIcon(scaledImagerCat);
+
+            boughtCatShowIcon = new JLabel(scaledImageofCatFinal);
+            boughtCatShowIcon.setBounds(40, 430, 200, 200);
+            catInfo.add(boughtCatShowIcon, BorderLayout.WEST);
+
+            boughtCatShowIcon.setVisible(true);
+        }
+        if(isCatBought3){
+            System.out.println("Check image load");
+            boughtCatImage = new ImageIcon("PET CATS/Cat3.png");
+            scaledImagerCat = boughtCatImage.getImage().getScaledInstance(230, 250, Image.SCALE_SMOOTH);
+            scaledImageofCatFinal = new ImageIcon(scaledImagerCat);
+
+            boughtCatShowIcon = new JLabel(scaledImageofCatFinal);
+            boughtCatShowIcon.setBounds(40, 430, 200, 200);
+            catInfo.add(boughtCatShowIcon, BorderLayout.WEST);
+
+            boughtCatShowIcon.setVisible(true);
+        }
+        if(isCatBought4){
+            System.out.println("Check image load");
+            boughtCatImage = new ImageIcon("PET CATS/Cat4.png");
+            scaledImagerCat = boughtCatImage.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+            scaledImageofCatFinal = new ImageIcon(scaledImagerCat);
+
+            boughtCatShowIcon = new JLabel(scaledImageofCatFinal);
+            boughtCatShowIcon.setBounds(70, 430, 200, 200);
+            catInfo.add(boughtCatShowIcon, BorderLayout.WEST);
+
+            boughtCatShowIcon.setVisible(true);
+        }
+
+    }
 
 
 
