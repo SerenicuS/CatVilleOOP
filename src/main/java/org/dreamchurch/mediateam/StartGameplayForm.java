@@ -17,7 +17,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     private JButton mainMenuButton, petInformationButton, petShopButton;
     private Font topFontButtons, catCurrency, petShopFont, catInfoFont;
     private JLabel catCoinz, catCoinzAmount;
-    private int userCatCoinz;
+    private int userCatCoinz = 400;
 
 
 
@@ -37,10 +37,10 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     private JButton buyCat, cancelBuy;
     private JLabel catName;
     private JTextField userCatName;
-    private JPanel catInfoPanel, catInfoButtonPanel, catArea;
+    private JPanel catInfoPanel, catInfoButtonPanel;
 
     private boolean isCatBought1, isCatBought2, isCatBought3, isCatBought4;
-    private String catTemporaryNameStorage;
+
 
     /*
         Pet Information Instantiation JComponents
@@ -62,12 +62,24 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         GLOBAL VARIABLES THAT MIGHT BE USED FOR OTHER CLASS
      */
 
-    CatClass myCat;
+
+    /*
+        EDIT CAT FRAME
+     */
+    JFrame editTool;
+
+    private JButton saveCat, cancelSave;
+    private JPanel editInfoPanel, editInfoButtonPanel;
+    private Font editInfoFont;
+    private JLabel catEditedName;
+    private JTextField catEditedTextField;
 
 
-
-
-
+    /*
+        STORAGE OF THE CATNAMES
+     */
+    private String[] catStorage;
+    private int counter = 0;
 
 
 
@@ -112,6 +124,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         add(catCoinz);
         add(catCoinzAmount);
 
+        catStorage = new String[4];
+
 
 
         // Adding the catArea panel
@@ -147,7 +161,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         catCoinz = new JLabel("Cat Coinz: ");
         catCoinz.setBounds(800, 0, 300, 50);
 
-        catCoinzAmount = new JLabel("100");
+        catCoinzAmount = new JLabel(String.valueOf(userCatCoinz));
         catCoinzAmount.setBounds(950, 0, 200, 50);
 
 
@@ -199,8 +213,11 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         if (e.getSource().equals(cat1Buy)){
             isCatBought1 = true;
+
             CatInfo();
+
             System.out.println("Check logic");
+
 
         }
         if (e.getSource().equals(cat2Buy)){
@@ -222,17 +239,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         }
         if (e.getSource().equals(buyCat)){
-            catInfo.dispose();
-            PetShop.dispose();
-
-            CatClass myCat = new CatClass(userCatName.getText());
-            catTemporaryNameStorage = userCatName.getText();
-
-
-
-            myCat.testCat();
-            SpawnCat();
-            SetUserPutName();
+            CatTransaction(100);
         }
         if(e.getSource().equals(cancelBuy)){
             catInfo.dispose();
@@ -242,18 +249,52 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             THIS ACTION LISTENER STATEMETNS ARE INSIDE THE PETINFORMATION FRAME
          */
         if (e.getSource().equals(editCatInfo)) {
-
+            EditTheCatInfo();
         }
         if(e.getSource().equals(closeCatInfo)){
-            System.out.println("Check Close");
+            editCatInfo.setEnabled(false);
             petInformationFrame.dispose();
         }
+
+        /*
+            THIS ACTION LISTENER IS FOR THE EDIT THE CAT INFO
+         */
+        if(e.getSource().equals(saveCat)){
+
+        }
+        if(e.getSource().equals(cancelSave)){
+            editTool.dispose();
+        }
+
 
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        /*
+            THIS SECTION IS TO EDIT THE NAMES OF THE CATS IN PETINFORMTIONFRAME
+         */
+        System.out.println("Check Mouse Event ");
+        if (e.getSource().equals(cat1Panel) && !cat1TxtName.getText().isEmpty()) {
+            editCatInfo.setEnabled(true);
 
+            System.out.println("Check MouseCLicked in cat1Panel");
+        }
+        if (e.getSource().equals(cat2Panel) && !cat2TxtName.getText().isEmpty()) {
+            editCatInfo.setEnabled(true);
+
+            System.out.println("Check MouseCLicked in cat2Panel");
+        }
+        if (e.getSource().equals(cat3Panel) && !cat3TxtName.getText().isEmpty()) {
+            editCatInfo.setEnabled(true);
+
+            System.out.println("Check MouseCLicked in cat3Panel");
+        }
+        if (e.getSource().equals(cat4Panel) && !cat4TxtName.getText().isEmpty()) {
+            editCatInfo.setEnabled(true);
+
+            System.out.println("Check MouseCLicked in cat4Panel");
+        }
     }
 
     @Override
@@ -283,7 +324,11 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
     @Override
     public void windowClosing(WindowEvent e) {
+        if(e.getSource().equals(petInformationFrame)){
+            editCatInfo.setEnabled(false);
 
+            petInformationFrame.dispose();
+        }
     }
 
     @Override
@@ -566,7 +611,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         petInformationFrame.setLocationRelativeTo(null);
         petInformationFrame.setVisible(false);
-        petInformationFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
 
 
 
@@ -583,6 +628,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
          */
         editCatInfo = new JButton("EDIT");
         editCatInfo.setFont(petDetailsFont);
+        editCatInfo.setEnabled(false);
         editCatInfo.setBounds(190, 590, 100, 50);
         closeCatInfo = new JButton("CLOSE");
         closeCatInfo.setFont(petDetailsFont);
@@ -592,22 +638,21 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         /*
             PET TEXTS
          */
-        cat1TxtName = new JTextField("EMPTY");
+        cat1TxtName = new JTextField("");
         cat1TxtName.setBounds(0, 0, 200, 30);
         cat1TxtName.setFont(userInputDetailsFont);
 
-        cat2TxtName = new JTextField("EMPTY");
+        cat2TxtName = new JTextField("");
         cat2TxtName.setBounds(0, 0, 200, 30);
         cat2TxtName.setFont(userInputDetailsFont);
 
-        cat3TxtName = new JTextField("EMPTY");
+        cat3TxtName = new JTextField("");
         cat3TxtName.setBounds(0, 0, 200, 30);
         cat3TxtName.setFont(userInputDetailsFont);
 
-        cat4TxtName = new JTextField("EMPTY");
+        cat4TxtName = new JTextField("");
         cat4TxtName.setBounds(0, 0, 200, 30);
         cat4TxtName.setFont(userInputDetailsFont);
-
 
         /*
             PET LABELS
@@ -708,7 +753,16 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         petInformationFrame.add(closeCatInfo);
 
         editCatInfo.addActionListener(this);
+
         closeCatInfo.addActionListener(this);
+
+
+        cat1Panel.addMouseListener(this);
+        cat2Panel.addMouseListener(this);
+        cat3Panel.addMouseListener(this);
+        cat4Panel.addMouseListener(this);
+
+        petInformationFrame.addWindowListener(this);
 
 
 
@@ -716,11 +770,43 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     }
 
 
+    // THIS FUNCTION WILL ASSESS IF THE USER CAN BUY SOMETHING
+    public void CatTransaction(int purchaseGoods){
+
+        if(userCatCoinz >= purchaseGoods && counter < 4){
+            userCatCoinz = userCatCoinz - purchaseGoods;
+            catCoinzAmount.setText(String.valueOf(userCatCoinz));
+            catInfo.dispose();
+            PetShop.dispose();
+
+            catStorage[counter] = userCatName.getText();
+
+            System.out.println(catStorage[counter]);
+            SpawnCat();
+            SetUserPutName(catStorage[counter]);
+
+            counter++;
+
+        }
+        else if (counter == 4){
+
+            JOptionPane.showMessageDialog(null, "You have bought the maximum amount of Cats");
+            catInfo.dispose();
+        }
+        else{
+
+            JOptionPane.showMessageDialog(null, "You have bought the maximum amount of Cats");
+            catInfo.dispose();
+        }
+
+    }
+
+
     /*
-        THIS AREA IS ONLY FOR CRUD OPERATIONS
+        THIS AREA IS ONLY FOR CRUDE OPERATIONS
      */
 
-    public void SetUserPutName(){
+    public void SetUserPutName(String nameParameter){
 
 
         System.out.println("Check SetUserPutName");
@@ -739,11 +825,11 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             petInformationFrame.repaint();
             petInformationFrame.revalidate();
 
-            cat1TxtName.setText(catTemporaryNameStorage);
+            cat1TxtName.setText(nameParameter);
             isCatBought1 = false;
 
             System.out.println("Check isCatBought1 true and written :" + cat1TxtName.getText());
-            System.out.println("Check isCatBought1 true and written :" + catTemporaryNameStorage);
+
 
 
         }
@@ -762,7 +848,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             petInformationFrame.revalidate();
 
 
-            cat2TxtName.setText(catTemporaryNameStorage);
+            cat2TxtName.setText(nameParameter);
             isCatBought2 = false;
 
 
@@ -778,7 +864,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             catPicPanel.add(boughtCatShow);
 
-            cat3TxtName.setText(catTemporaryNameStorage);
+            cat3TxtName.setText(nameParameter);
             isCatBought3 = false;
         }
         if(isCatBought4){
@@ -792,17 +878,69 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             catPicPanel.add(boughtCatShow);
 
-            cat4TxtName.setText(catTemporaryNameStorage);
+            cat4TxtName.setText(nameParameter);
             isCatBought4 = false;
 
 
         }
 
-
-
-
-
     }
+
+    public void EditTheCatInfo() {
+        editTool = new JFrame();
+        editInfoPanel = new JPanel();
+        editTool.setTitle("Edit Tool");
+        editTool.setSize(500, 300);
+        editTool.setLayout(new BorderLayout(2, 2));
+        editTool.add(editInfoPanel, BorderLayout.CENTER);  // Changed to BorderLayout.CENTER
+        EditTheCatInfoInstantiation();
+        editTool.setVisible(true);
+        editTool.setLocationRelativeTo(null);
+        editTool.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+
+    public void EditTheCatInfoInstantiation() {
+        editInfoFont = new Font("Comic Sans MS", Font.PLAIN, 20);
+
+        // DECLARING the BUTTONS
+        saveCat = new JButton("SAVE");
+        cancelSave = new JButton("CANCEL");
+
+        // DECLARING THE LABELS
+        catEditedName = new JLabel("New Cat's Name: ");
+
+        // DECLARING THE TEXTFIELD
+        catEditedTextField = new JTextField();
+        catEditedTextField.setColumns(20);
+
+        // SETTING THE FONT
+        catEditedName.setFont(catInfoFont);
+        catEditedTextField.setFont(editInfoFont);
+
+        // SETTING THE LOCATION OF THE JCOMPONENTS
+        editInfoPanel.setLayout(new BorderLayout(10, 10));
+
+        JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        centerPanel.add(catEditedName);
+        centerPanel.add(catEditedTextField);
+
+        editInfoPanel.add(centerPanel, BorderLayout.CENTER);
+
+        // ADDING THE BUTTONS, LABELS, TEXTFIELD ON THE CAT INFO GUI
+        editInfoButtonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        editInfoButtonPanel.add(saveCat);
+        editInfoButtonPanel.add(cancelSave);
+
+        editInfoPanel.add(editInfoButtonPanel, BorderLayout.SOUTH);
+
+
+        //ADDING ACTION LISTENER
+        saveCat.addActionListener(this);
+        cancelSave.addActionListener(this);
+    }
+
+
+
 
 
 
