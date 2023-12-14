@@ -114,7 +114,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         StartGameplayFormComponentsDeclaration();
         PetInformationFrame();
         CatInfo();
-
+        PetShop();
 
 
 
@@ -223,7 +223,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         }
         if(e.getSource().equals(petShopButton)){
 
-            PetShop();
+            PetShop.setVisible(true);
         }
 
         /*
@@ -237,6 +237,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             LoadImageCat();
             catInfo.revalidate();
             catInfo.repaint();
+
+
             System.out.println("Check logic");
 
 
@@ -257,6 +259,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             isCatBought3 = true;
 
             catInfo.setVisible(true);
+
 
             LoadImageCat();
             catInfo.revalidate();
@@ -411,6 +414,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             isCatBought4 = false;
             catInfo.dispose();
 
+
         }
     }
 
@@ -460,7 +464,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         PetShop.setLocationRelativeTo(null);
 
-        PetShop.setVisible(true);
+        PetShop.setVisible(false);
         PetShop.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 
@@ -884,12 +888,31 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             SetUserPutName(catStorage[counter]);
 
             userCatName.setText("");
+
+
+            boughtCatShowIcon.setVisible(false);
+
+            //TWO IDENTICAL CATS THAT ARE BOUGHT SHOULD NOT HAPPEN
+            System.out.println("isCatBought1 : " + isCatBought1);
+            if(isCatBought1){
+                cat1Buy.setEnabled(false);
+                System.out.println("Lock Button" + cat1Buy.isEnabled());
+            }
+            if(isCatBought2){
+                cat1Buy.setEnabled(false);
+
+            }
+            if(isCatBought3){
+                cat1Buy.setEnabled(false);
+            }
+            if(isCatBought4){
+                cat1Buy.setEnabled(false);
+            }
+
             isCatBought1 = false;
             isCatBought2 = false;
             isCatBought3 = false;
             isCatBought4 = false;
-
-            boughtCatShowIcon.setVisible(false);
 
             counter++;
 
@@ -932,9 +955,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             petInformationFrame.revalidate();
 
             cat1TxtName.setText(nameParameter);
-            isCatBought1 = false;
 
-            System.out.println("Check isCatBought1 true and written :" + cat1TxtName.getText());
+
 
 
 
@@ -955,9 +977,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
 
             cat2TxtName.setText(nameParameter);
-            isCatBought2 = false;
 
 
+            cat2Buy.setEnabled(false);
         }
         if(isCatBought3){
             //GENERATING THE IMAGE
@@ -971,7 +993,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             catPicPanel.add(boughtCatShow);
 
             cat3TxtName.setText(nameParameter);
-            isCatBought3 = false;
+
+            cat3Buy.setEnabled(false);
         }
         if(isCatBought4){
             //GENERATING THE IMAGE
@@ -985,7 +1008,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             catPicPanel.add(boughtCatShow);
 
             cat4TxtName.setText(nameParameter);
-            isCatBought4 = false;
+            cat4Buy.setEnabled(false);
 
 
         }

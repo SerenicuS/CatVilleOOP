@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="The adding of Cats are now set, the Cat names are properly synchronized in different frames.&#10;Here are the list of what-to-do&#10;1. Merging the Prefinal database task to here.&#10;2. Adding the Edit Feature of the PetInformationFrame.&#10;3. Increasing and Decreasing of the CatCoinz for a realistic currency.&#10;&#10;&#10;Additional Features:&#10;1. Add customization of the frame background like changing the house theme.&#10;2. Add movable objects that can be bought.">
-      <change afterPath="$PROJECT_DIR$/Music/menumusic.wav" afterDir="false" />
+    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="Adding music and it is closer to be good. However&#10;Here are the list on what-to-do&#10;&#10;Additional Features that is needed:&#10;1. Add customization of the frame background like changing the house theme.&#10;2. Add movable objects that can be bought(or Cats if possible).&#10;3. Cats bought are not limited in fixed locations. The cat that was bought first will be added first in the PetInformationFrame&#10;&#10;Added Features thar are Unique:&#10;1. There is now background music!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702468170057</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adding music and it is closer to be good. However&#10;Here are the list on what-to-do&#10;&#10;Additional Features that is needed:&#10;1. Add customization of the frame background like changing the house theme.&#10;2. Add movable objects that can be bought(or Cats if possible).&#10;3. Cats bought are not limited in fixed locations. The cat that was bought first will be added first in the PetInformationFrame&#10;&#10;Added Features thar are Unique:&#10;1. There is now background music!">
+      <option name="closed" value="true" />
+      <created>1702552532190</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702552532190</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +138,7 @@
     <MESSAGE value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close" />
     <MESSAGE value="Establish the Pet Information Button, it should work fine. Regardless, there are some needed buttons and functions to be added such as:&#10;1. Adding Buttons of Edit Info or Close&#10;2. Merging the Prefinal task to here" />
     <MESSAGE value="The adding of Cats are now set, the Cat names are properly synchronized in different frames.&#10;Here are the list of what-to-do&#10;1. Merging the Prefinal database task to here.&#10;2. Adding the Edit Feature of the PetInformationFrame.&#10;3. Increasing and Decreasing of the CatCoinz for a realistic currency.&#10;&#10;&#10;Additional Features:&#10;1. Add customization of the frame background like changing the house theme.&#10;2. Add movable objects that can be bought." />
-    <option name="LAST_COMMIT_MESSAGE" value="The adding of Cats are now set, the Cat names are properly synchronized in different frames.&#10;Here are the list of what-to-do&#10;1. Merging the Prefinal database task to here.&#10;2. Adding the Edit Feature of the PetInformationFrame.&#10;3. Increasing and Decreasing of the CatCoinz for a realistic currency.&#10;&#10;&#10;Additional Features:&#10;1. Add customization of the frame background like changing the house theme.&#10;2. Add movable objects that can be bought." />
+    <MESSAGE value="Adding music and it is closer to be good. However&#10;Here are the list on what-to-do&#10;&#10;Additional Features that is needed:&#10;1. Add customization of the frame background like changing the house theme.&#10;2. Add movable objects that can be bought(or Cats if possible).&#10;3. Cats bought are not limited in fixed locations. The cat that was bought first will be added first in the PetInformationFrame&#10;&#10;Added Features thar are Unique:&#10;1. There is now background music!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding music and it is closer to be good. However&#10;Here are the list on what-to-do&#10;&#10;Additional Features that is needed:&#10;1. Add customization of the frame background like changing the house theme.&#10;2. Add movable objects that can be bought(or Cats if possible).&#10;3. Cats bought are not limited in fixed locations. The cat that was bought first will be added first in the PetInformationFrame&#10;&#10;Added Features thar are Unique:&#10;1. There is now background music!" />
   </component>
 </project>
