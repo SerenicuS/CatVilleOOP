@@ -2,18 +2,16 @@ package org.dreamchurch.mediateam;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.Set;
+import java.io.*;
+
 
 public class StartGameplayForm extends JFrame implements ActionListener, WindowListener, MouseListener {
     /*
-     DECLARATION OF JCOMPONENTS
-     */
+         DECLARATION OF JCOMPONENTS
+         */
     // This buttons only exist in START GAMEPLAY FFORM
     private JButton mainMenuButton, petInformationButton, petShopButton;
     private Font topFontButtons, catCurrency, petShopFont, catInfoFont;
@@ -56,7 +54,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
 
     private JLabel catInfoNameLabel1, catInfoNameLabel2, catInfoNameLabel3, catInfoNameLabel4, catInfoTypeLabel;
-    private JLabel catInfoNameCat, catInfoTypeCat;
+
     private Font petDetailsFont, userInputDetailsFont;
     private JFrame petInformationFrame;
     private JPanel cat1Panel, cat2Panel, cat3Panel, cat4Panel, catPicPanel;
@@ -97,6 +95,12 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     private boolean isCat3Edited;
     private boolean isCat4Edited;
 
+    /*
+        CAT STORING AND LOADING DATA PROGRESS VARIABLES
+     */
+    private static final String PROGRESS_FILE_PATH = "UserProgessFile/user.progress.txt";
+    private static ProgressData progressData;
+    private static boolean isInitialized = false;
 
     /*
 
@@ -105,7 +109,21 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
 
 
+
      */
+
+
+
+    private static void ensureInitialized() {
+        if (!isInitialized) {
+            progressData = loadProgress();
+            // Other initialization logic if needed
+            isInitialized = true;
+        }
+    }
+
+
+
 
     public StartGameplayForm(){
         setSize(1300, 700);
@@ -115,6 +133,31 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         PetInformationFrame();
         CatInfo();
         PetShop();
+        ensureInitialized();
+
+
+        /*
+            THIS METHODS ARE USED TO LOAD AND SAVE THE PROGRESS OF THE USER
+         */
+
+        userCatCoinz = progressData.getUserCatCoinz();
+        catCoinzAmount.setText(String.valueOf(userCatCoinz));
+        progressData.setUserCatCoinz(userCatCoinz);
+
+        System.out.println("Check Progress Data Value: " + progressData);
+
+
+
+        System.out.println("Check Progress Data Value after saveProgressData" + progressData);
+
+
+
+        // DEBUG CHECK STATEMENT
+        System.out.println("Check Amount: " + userCatCoinz);
+        System.out.println("Check Counter Value: " + counter);
+        System.out.println("Check Boolean Variables of CAT INFO: : " + isCatBought1 + isCatBought2 + isCatBought3 + isCatBought4);
+        System.out.println("Check Amount: " + userCatCoinz);
+
 
 
 
@@ -143,7 +186,10 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         add(catCoinz);
         add(catCoinzAmount);
 
-        catStorage = new String[4];
+        catStorage = new String[4]; // STORAGE OF CATS BOUGHT
+
+
+        addWindowListener(this); //ADDING THE START1 FRAME A WINDOWS LISTENER
 
 
 
@@ -153,8 +199,10 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
 
+
         System.out.println("Frame visibility: " + isVisible());
     }
+
 
 
 
@@ -211,7 +259,10 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             try {
                 mainMenuFrame.setLocation(getLocationOnScreen());
-                dispose();
+                System.out.println("Progress Data value in mainMenu: " + progressData);
+
+                System.out.println("Check Progress Data Value after saveProgressData: " + loadProgress());
+                setVisible(false);
             } catch (IllegalComponentStateException ex) {
                 // Handle the exception, or ignore it if not critical
             }
@@ -488,7 +539,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         //PET SHOP BUTTONS
         cat1Buy = new JButton("100 CatCoinz");
         cat1Buy.setFont(petShopFont);
-        cat1Buy.setBounds(20, 200, 150, 30);
+        cat1Buy.setBounds(20, 200, 150, 30);System.out.println("Check Progress Data Value of saveProgress: " + progressData);
         cat2Buy = new JButton("100 CatCoinz");
         cat2Buy.setFont(petShopFont);
         cat2Buy.setBounds(180, 200, 150, 30);
@@ -877,6 +928,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         if(userCatCoinz >= purchaseGoods && counter < 4){
             userCatCoinz = userCatCoinz - purchaseGoods;
+            progressData.setUserCatCoinz(userCatCoinz);
+            System.out.println("Check Progress Data Value of progressData in CatTransaction: " + progressData.getUserCatCoinz());
             catCoinzAmount.setText(String.valueOf(userCatCoinz));
             catInfo.dispose();
             PetShop.dispose();
@@ -891,6 +944,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
 
             boughtCatShowIcon.setVisible(false);
+            System.out.println("Check Progress Data Value of progressData in CatTransaction: " + progressData);
+            saveProgress(progressData);
 
             //TWO IDENTICAL CATS THAT ARE BOUGHT SHOULD NOT HAPPEN
             System.out.println("isCatBought1 : " + isCatBought1);
@@ -1172,6 +1227,56 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         }
 
     }
+
+    //BETA FEATURES OF STORING THE PROGRESS OF THE USER, THIS ELIMINATES THE RESTART BUG
+
+    /*
+        THIS CODE IS STILL IN BETA, PROCEED WITH CAUTION!
+     */
+
+
+    private static ProgressData loadProgress() {
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(PROGRESS_FILE_PATH));
+            String data = reader.readLine();
+            reader.close();
+
+
+            // Check if data is null before creating an instance of ProgressData
+            if (data != null) {
+                return ProgressData.fromString(data);
+            } else {
+                // Handle the case where data is null (e.g., file is empty)
+                System.out.println("File is empty");
+                return new ProgressData();
+            }
+        } catch (IOException e) {
+            // Handle exceptions (e.g., file not found, invalid content)
+            e.printStackTrace();
+            return new ProgressData(); // Return a default instance if an error occurs
+        }
+    }
+
+
+
+    private static void saveProgress(ProgressData progressData) {
+        System.out.println("Check Progress Data Value of saveProgress: " + progressData);
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(PROGRESS_FILE_PATH));
+            writer.write(progressData.toString());
+            writer.close();
+        } catch (IOException e) {
+            // Handle exceptions (e.g., unable to write to file)
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
 
 
 

@@ -64,6 +64,8 @@ public class Main extends JFrame implements ActionListener, WindowListener {
 
 
 
+
+
     /*
 
      */
@@ -88,8 +90,8 @@ public class Main extends JFrame implements ActionListener, WindowListener {
         // CALLING THE JCOMPONENTS FUNCTIONS
         StartMenuDeclaration();
 
-        String filePath = "Music/menumusic.wav";
-        PlayMusicInBackground(filePath);
+       // String filePath = "Music/menumusic.wav";
+        //PlayMusicInBackground(filePath);
 
 
 
@@ -178,6 +180,7 @@ public class Main extends JFrame implements ActionListener, WindowListener {
             setVisible(false);
 
             StartGameplayForm start1 = new StartGameplayForm();
+
             start1.setLocation(lastLocation);
 
 
@@ -227,7 +230,8 @@ public class Main extends JFrame implements ActionListener, WindowListener {
     public void windowDeactivated(WindowEvent e) {
 
     }
-    public void PlayMusicInBackground(String filePath) {
+    /*
+     public void PlayMusicInBackground(String filePath) {
         SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
             @Override
             protected Void doInBackground() {
@@ -277,4 +281,6 @@ public class Main extends JFrame implements ActionListener, WindowListener {
             e.printStackTrace();
         }
     }
+     */
+
 }
