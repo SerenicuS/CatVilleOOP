@@ -90,6 +90,7 @@ public class Main extends JFrame implements ActionListener, WindowListener {
         // CALLING THE JCOMPONENTS FUNCTIONS
         StartMenuDeclaration();
 
+
        // String filePath = "Music/menumusic.wav";
         //PlayMusicInBackground(filePath);
 
@@ -133,6 +134,7 @@ public class Main extends JFrame implements ActionListener, WindowListener {
         startLabel = new JLabel("Cat Ville");
         startLabel.setFont(startLabelFont);
         startLabel.setForeground(Color.BLACK);
+
 
 
         // BUTTONS
