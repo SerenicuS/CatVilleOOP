@@ -180,7 +180,7 @@ public class Main extends JFrame implements ActionListener, WindowListener {
             // This code will open the gameplay form
             Point lastLocation = getLocationOnScreen();
             setVisible(false);
-
+            System.out.println("START RUN---------------");
             StartGameplayForm start1 = new StartGameplayForm();
 
             start1.setLocation(lastLocation);

@@ -4,6 +4,7 @@ package org.dreamchurch.mediateam;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /*
     THIS CLASS IS USED FOR STORING AND LOADING THE DATA PROGRESS OF THE USER, IT IS STILL IN BETA
@@ -115,7 +116,6 @@ public class ProgressData {
     public static ProgressData fromString(String data) {
         System.out.println("Raw data before parsing: " + data);
         try {
-
             if (data != null) {
                 String[] parts = data.split(",");
 
@@ -135,18 +135,23 @@ public class ProgressData {
                         progressData.setCatStorage(parts[6].replaceAll("\\[|\\]", "").split("\\s*,\\s*"));
                     }
 
-
                     if (parts.length >= 8) {
                         String[] listParts = parts[7].replaceAll("\\[|\\]", "").split("\\s*,\\s*");
-                        progressData.getArrangementofCats().addAll(
+                        progressData.setArrangementofCats(
                                 Arrays.stream(listParts)
                                         .map(String::trim)  // Trim spaces
                                         .filter(s -> !s.isEmpty())  // Filter out empty strings
-                                        .map(Integer::parseInt)
+                                        .map(s -> {
+                                            try {
+                                                return Integer.parseInt(s);
+                                            } catch (NumberFormatException ex) {
+                                                // Handle invalid integer, e.g., log the error
+                                                return null; // or another default value
+                                            }
+                                        })
+                                        .filter(Objects::nonNull)  // Filter out null values
                                         .toList()
                         );
-
-
                     } else {
                         progressData.setArrangementofCats(new ArrayList<>());
                     }
@@ -154,19 +159,25 @@ public class ProgressData {
                     return progressData;
                 }
             }
-        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+        } catch (ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
         }
         return new ProgressData();
     }
 
     private static Integer parseInteger(String s) {
-        return s.trim().isEmpty() ? null : Integer.parseInt(s.trim());
+        try {
+            return s.trim().isEmpty() ? null : Integer.parseInt(s.trim());
+        } catch (NumberFormatException e) {
+            // Handle invalid integer, e.g., log the error
+            return null; // or another default value
+        }
     }
 
     private static Boolean parseBoolean(String s) {
         return s.trim().isEmpty() ? null : Boolean.parseBoolean(s.trim());
     }
+
 
 
 
