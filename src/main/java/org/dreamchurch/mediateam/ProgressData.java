@@ -1,10 +1,12 @@
 package org.dreamchurch.mediateam;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+
 
 /*
     THIS CLASS IS USED FOR STORING AND LOADING THE DATA PROGRESS OF THE USER, IT IS STILL IN BETA
@@ -63,6 +65,10 @@ public class ProgressData {
         isCatBought4 = catBought4;
     }
 
+    public String getCatBooleanVariables(){
+        return isCatBought1 + "|" + isCatBought2 + "|" + isCatBought3 + "|" + isCatBought4;
+    }
+
     public String[] getCatStorage() {
         return catStorage;
     }
@@ -80,10 +86,12 @@ public class ProgressData {
     }
 
     public List<Integer> getArrangementofCats() {
+        System.out.println("getArrangementofCats started its run");
         if (arrangementofCats == null) {
             System.out.println("ArrangementofCats function getarrangement of cats" + arrangementofCats);
             arrangementofCats = new ArrayList<>();
         }
+
         return arrangementofCats;
     }
 
@@ -112,6 +120,7 @@ public class ProgressData {
 
         return stringBuilder.toString();
     }
+
 
     public static ProgressData fromString(String data) {
         System.out.println("Raw data before parsing: " + data);
@@ -156,6 +165,16 @@ public class ProgressData {
                         progressData.setArrangementofCats(new ArrayList<>());
                     }
 
+                    System.out.println("Raw data after parsing: " + data);
+
+                    System.out.println("Raw data after parsing: " + data);
+                    System.out.println("Check Values Inside ProgressDataFromString:");
+                    System.out.println("Check userCatCoinz: " + progressData.getUserCatCoinz());
+                    System.out.println("Check booleanVariables: " +
+                            progressData.isCatBought1() + progressData.isCatBought2() +
+                            progressData.isCatBought3() + progressData.isCatBought4());
+                    System.out.println("Check catStorage: " + Arrays.toString(progressData.getCatStorage()));
+                    System.out.println("Check arrangementofCats: " + progressData.getArrangementofCats());
                     return progressData;
                 }
             }
