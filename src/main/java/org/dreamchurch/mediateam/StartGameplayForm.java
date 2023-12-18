@@ -1573,7 +1573,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         }
 
-        int i = 0; // Initialize index variable
+
 
         for (JTextField textField : catTextFields) {
 
@@ -1592,7 +1592,6 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
                 break; // Exit the loop once a text field is set
             }
-            i++; // Increment index for the next iteration
         }
 
         System.out.println("FUNCTION: SetUserPutName ended its run");

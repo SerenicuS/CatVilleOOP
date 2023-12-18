@@ -123,12 +123,25 @@ public class ProgressData {
 
 
     public static ProgressData fromString(String data) {
+
+        System.out.println("---------------------------------------------------------");
+        System.out.println("ProgressData fromString started its run: ");
         System.out.println("Raw data before parsing: " + data);
+
         try {
+
+            System.out.println("ProgressData fromString checked try");
+
             if (data != null) {
+
+                System.out.println("ProgressData fromString  if (data != null) ");
+
                 String[] parts = data.split(",");
 
+                System.out.println("check String parts contents: " + Arrays.toString(parts));
+
                 if (parts.length >= 5) {
+                    System.out.println(" if (parts.length >= 5) is checked");
                     ProgressData progressData = new ProgressData();
                     progressData.setUserCatCoinz(parseInteger(parts[0]));
                     progressData.setCatBought1(parseBoolean(parts[1]));
@@ -137,31 +150,60 @@ public class ProgressData {
                     progressData.setCatBought4(parseBoolean(parts[4]));
 
                     if (parts.length >= 6) {
+                        System.out.println(" if (parts.length >= 6) is checked");
                         progressData.setCounter(parseInteger(parts[5]));
                     }
 
                     if (parts.length >= 7) {
-                        progressData.setCatStorage(parts[6].replaceAll("\\[|\\]", "").split("\\s*,\\s*"));
+                        System.out.println(" if (parts.length >= 7) is checked");
+                        List<String[]> catStorageList = new ArrayList<>();
+                        for (int i = 6; i < 10 && i < parts.length; i++) {
+                            catStorageList.add(parts[i].replaceAll("\\[|\\]", "").split("\\s*,\\s*"));
+                        }
+
+                        // Flatten the List<String[]> into a 1D array of Strings
+                        String[] flattenedCatStorage = catStorageList.stream()
+                                .flatMap(Arrays::stream)
+                                .map(String::trim)  // Trim spaces
+                                .toArray(String[]::new);
+
+                        System.out.println("Flattened catStorage: " + Arrays.toString(flattenedCatStorage));
+                        progressData.setCatStorage(flattenedCatStorage);
                     }
 
-                    if (parts.length >= 8) {
-                        String[] listParts = parts[7].replaceAll("\\[|\\]", "").split("\\s*,\\s*");
-                        progressData.setArrangementofCats(
-                                Arrays.stream(listParts)
-                                        .map(String::trim)  // Trim spaces
-                                        .filter(s -> !s.isEmpty())  // Filter out empty strings
-                                        .map(s -> {
-                                            try {
-                                                return Integer.parseInt(s);
-                                            } catch (NumberFormatException ex) {
-                                                // Handle invalid integer, e.g., log the error
-                                                return null; // or another default value
-                                            }
-                                        })
-                                        .filter(Objects::nonNull)  // Filter out null values
-                                        .toList()
-                        );
+                    if (parts.length >= 9) {
+                        System.out.println(" if (parts.length >= 13) is checked");
+
+                        List<Integer> arrangementList = new ArrayList<>();
+
+                        for (int i = 10; i < parts.length; i++) {
+                            String[] listParts = parts[i].replaceAll("\\[|\\]", "").split("\\s*,\\s*");
+
+                            arrangementList.addAll(
+                                    Arrays.stream(listParts)
+                                            .map(String::trim)  // Trim spaces
+                                            .filter(s -> !s.isEmpty())  // Filter out empty strings
+                                            .map(s -> {
+                                                try {
+                                                    System.out.println("Integer.parseInt is :" + s);
+                                                    return Integer.parseInt(s);
+                                                } catch (NumberFormatException ex) {
+                                                    System.out.println("Check null catch");
+                                                    // Handle invalid integer, e.g., log the error
+                                                    return null; // or another default value
+                                                }
+                                            })
+                                            .filter(Objects::nonNull)  // Filter out null values
+                                            .toList()
+                            );
+
+                            progressData.setArrangementofCats(arrangementList);
+                        }
+
+                        System.out.println("Check Set arrangementofCats:" + progressData.getArrangementofCats());
+
                     } else {
+                        System.out.println("else is checked inProgressData");
                         progressData.setArrangementofCats(new ArrayList<>());
                     }
 
@@ -175,6 +217,10 @@ public class ProgressData {
                             progressData.isCatBought3() + progressData.isCatBought4());
                     System.out.println("Check catStorage: " + Arrays.toString(progressData.getCatStorage()));
                     System.out.println("Check arrangementofCats: " + progressData.getArrangementofCats());
+
+                    System.out.println("FUNCTION: ProgressData fromString ended its run");
+                    System.out.println("---------------------------------------------------------");
+
                     return progressData;
                 }
             }
