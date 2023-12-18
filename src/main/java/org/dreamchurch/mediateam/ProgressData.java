@@ -1,7 +1,5 @@
 package org.dreamchurch.mediateam;
 
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,9 +17,6 @@ public class ProgressData {
     private int counter;
     private List<Integer> arrangementofCats;
 
-
-
-
     public int getUserCatCoinz() {
         return userCatCoinz;
     }
@@ -29,9 +24,6 @@ public class ProgressData {
     public void setUserCatCoinz(int userCatCoinz) {
         this.userCatCoinz = userCatCoinz;
     }
-
-
-
 
     public boolean isCatBought1() {
         return isCatBought1;
@@ -86,13 +78,19 @@ public class ProgressData {
     }
 
     public List<Integer> getArrangementofCats() {
+
         System.out.println("getArrangementofCats started its run");
+
         if (arrangementofCats == null) {
+
             System.out.println("ArrangementofCats function getarrangement of cats" + arrangementofCats);
+
             arrangementofCats = new ArrayList<>();
+
         }
 
         return arrangementofCats;
+
     }
 
     public void setArrangementofCats(List<Integer> arrangementofCats) {
@@ -141,6 +139,7 @@ public class ProgressData {
                 System.out.println("check String parts contents: " + Arrays.toString(parts));
 
                 if (parts.length >= 5) {
+
                     System.out.println(" if (parts.length >= 5) is checked");
                     ProgressData progressData = new ProgressData();
                     progressData.setUserCatCoinz(parseInteger(parts[0]));
@@ -150,25 +149,30 @@ public class ProgressData {
                     progressData.setCatBought4(parseBoolean(parts[4]));
 
                     if (parts.length >= 6) {
+
                         System.out.println(" if (parts.length >= 6) is checked");
                         progressData.setCounter(parseInteger(parts[5]));
+
                     }
 
                     if (parts.length >= 7) {
+
                         System.out.println(" if (parts.length >= 7) is checked");
                         List<String[]> catStorageList = new ArrayList<>();
                         for (int i = 6; i < 10 && i < parts.length; i++) {
                             catStorageList.add(parts[i].replaceAll("\\[|\\]", "").split("\\s*,\\s*"));
+
                         }
 
-                        // Flatten the List<String[]> into a 1D array of Strings
+
                         String[] flattenedCatStorage = catStorageList.stream()
                                 .flatMap(Arrays::stream)
-                                .map(String::trim)  // Trim spaces
+                                .map(String::trim)
                                 .toArray(String[]::new);
 
                         System.out.println("Flattened catStorage: " + Arrays.toString(flattenedCatStorage));
                         progressData.setCatStorage(flattenedCatStorage);
+
                     }
 
                     if (parts.length >= 9) {
@@ -181,19 +185,19 @@ public class ProgressData {
 
                             arrangementList.addAll(
                                     Arrays.stream(listParts)
-                                            .map(String::trim)  // Trim spaces
-                                            .filter(s -> !s.isEmpty())  // Filter out empty strings
+                                            .map(String::trim)
+                                            .filter(s -> !s.isEmpty())
                                             .map(s -> {
                                                 try {
                                                     System.out.println("Integer.parseInt is :" + s);
                                                     return Integer.parseInt(s);
                                                 } catch (NumberFormatException ex) {
                                                     System.out.println("Check null catch");
-                                                    // Handle invalid integer, e.g., log the error
-                                                    return null; // or another default value
+
+                                                    return null;
                                                 }
                                             })
-                                            .filter(Objects::nonNull)  // Filter out null values
+                                            .filter(Objects::nonNull)
                                             .toList()
                             );
 
@@ -207,7 +211,6 @@ public class ProgressData {
                         progressData.setArrangementofCats(new ArrayList<>());
                     }
 
-                    System.out.println("Raw data after parsing: " + data);
 
                     System.out.println("Raw data after parsing: " + data);
                     System.out.println("Check Values Inside ProgressDataFromString:");
@@ -217,11 +220,11 @@ public class ProgressData {
                             progressData.isCatBought3() + progressData.isCatBought4());
                     System.out.println("Check catStorage: " + Arrays.toString(progressData.getCatStorage()));
                     System.out.println("Check arrangementofCats: " + progressData.getArrangementofCats());
-
                     System.out.println("FUNCTION: ProgressData fromString ended its run");
                     System.out.println("---------------------------------------------------------");
 
                     return progressData;
+
                 }
             }
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -232,19 +235,18 @@ public class ProgressData {
 
     private static Integer parseInteger(String s) {
         try {
+
             return s.trim().isEmpty() ? null : Integer.parseInt(s.trim());
+
         } catch (NumberFormatException e) {
-            // Handle invalid integer, e.g., log the error
-            return null; // or another default value
+
+            return null;
         }
     }
 
     private static Boolean parseBoolean(String s) {
         return s.trim().isEmpty() ? null : Boolean.parseBoolean(s.trim());
     }
-
-
-
 
 }
 

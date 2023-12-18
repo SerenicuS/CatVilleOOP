@@ -4,9 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="Some Bugs are fixed.&#10;&#10;This is a much better update, fixed the synchronization issues but has phantom bug that cannot be found for some reason when I exited the program, leading to load and save feature not in sync&#10;&#10;TODO: If possible, try to fix the exit load and save bug&#10;&#10;FIXME more details:&#10;When I dipose the frame, the load and save progress and its contents are synchronized. However, when I try to exit the frame, it will lead to some phantom bugs that I cannot really fix even though my program has literally Debug Statements all over it. If i can't fix it right now, i might as well not continue fixing it.&#10;&#10;&#10;Committed on 12:34pm of 18th of December 2023. &#10;&#10;PS: One of the hardest bugs to ever fix and find.&#10;&#10;-SerenicuS">
+    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="This Program is now clean,&#10;&#10;This is the pre-final update, all is good and much of it are now synchronized. Although I still didn't scrutinize it to the point that I am going to hate it. Still it looks clean now.&#10;&#10;&#10;Suggestions:&#10;1. Add a DELETE BUTTON.&#10;&#10;&#10;Committed on 2:01pm of 18th of December 2023. &#10;&#10;PS: Fixed the Load and Save Bug after exiting the program. Whether I or not add a delete button will depends on the time remaining.&#10;&#10;-SerenicuS">
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2023_6_33_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_12_13_2023_6_33_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_12_14_2023_4_52_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/shelf/Uncommitted_changes_before_Update_at_12_14_2023_4_52_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/GameplayFiles/GameplayBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Music/menumusic.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/PET CATS/Cat1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/PET CATS/Cat2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/PET CATS/Cat3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/PET CATS/Cat4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/StartMenuFiles/Gamebackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/UMLFolder/ProgressDataUML.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/UserProgessFile/user.progress.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserProgessFile/user.progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UserProgessFile/user.progress.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/CatData.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/ProgressData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/ProgressData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" afterDir="false" />
@@ -20,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
@@ -72,13 +101,18 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/IdeaProjects/GitRepository/CatVille/src/main/java/org/dreamchurch/mediateam/BackgroundPanel.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\GitRepository\CatVille" />
       <recent name="C:\Users\Admin\IdeaProjects\GitRepository\CatVille\Music" />
     </key>
   </component>
@@ -171,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702874079854</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="This Program is now clean,&#10;&#10;This is the pre-final update, all is good and much of it are now synchronized. Although I still didn't scrutinize it to the point that I am going to hate it. Still it looks clean now.&#10;&#10;&#10;Suggestions:&#10;1. Add a DELETE BUTTON.&#10;&#10;&#10;Committed on 2:01pm of 18th of December 2023. &#10;&#10;PS: Fixed the Load and Save Bug after exiting the program. Whether I or not add a delete button will depends on the time remaining.&#10;&#10;-SerenicuS">
+      <option name="closed" value="true" />
+      <created>1702879378685</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702879378689</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +239,7 @@
     <MESSAGE value="Added the synchonization of CRUDE and load/save&#10;&#10;Added Feature in this patch:&#10;1.synched properly of load and save(didn't scrutinize so there might be bugs, check later)&#10;2. The cats are bought and placed with first in first add method&#10;&#10;&#10;Here are the list on what-to-do now:&#10;&#10;Additional Features that is needed:&#10;1. Add customization of the frame background like changing the house theme.&#10;2. Add movable objects that can be bought(or Cats if possible).&#10;3. DELETE FEATURE(IMPOSSIBLE)&#10;&#10;&#10;Committed on 8:47 of 16th of December 2023. &#10;&#10;PS: The CRUDE is halfway done! idk if i want to put delete feature because it is so complicated now. This patch is buggy but i need to rest for now.Also, there are a lot of optimization issues and redundancy but if i remove them something might not work.&#10;&#10;-SerenicuS" />
     <MESSAGE value="Optimization and Debug Statements added and currently being worked on, to make sure that adding new features will not be a hassle.&#10;&#10;THIS PATCH IS THE MOST BUGGY PATCH EVER, PLEASE FIX THIS ASAP.&#10;&#10;TODO:  ADD EVERY FUNCTIONS WITH PRINT STATEMENTS TO DEBUG AND EASILY ADD MORE FEATURES. CHECK THE CODE TO SEE WHERE IS THE LAST FUNCTION THAT HAS REVISED PRINT STATEMENTS/DEBUGS STATEMENTS&#10;&#10;FIXME:&#10;1. A code here that is still not found is adding a phantom value that is being added in arrangementOfCats for some reason and it makes the add of new cats weird because the 2nd catimage will go to the 3rd catimage's location.&#10;&#10;2. After buying a cat and bought another one, the CatInfo label showing the cat's image before being bought is not the cat's own image and it is the previous cat that is bought. For some reason if you close that frame and click it again it will show the correct label, what annoying bug.&#10;&#10;&#10;&#10;Committed on 10:52pm of 17th of December 2023. &#10;&#10;PS: Man, this is one of the most buggy update ever. I need to fix this asap so i can start creating the soft copy for this. &#10;&#10;-SerenicuS" />
     <MESSAGE value="Some Bugs are fixed.&#10;&#10;This is a much better update, fixed the synchronization issues but has phantom bug that cannot be found for some reason when I exited the program, leading to load and save feature not in sync&#10;&#10;TODO: If possible, try to fix the exit load and save bug&#10;&#10;FIXME more details:&#10;When I dipose the frame, the load and save progress and its contents are synchronized. However, when I try to exit the frame, it will lead to some phantom bugs that I cannot really fix even though my program has literally Debug Statements all over it. If i can't fix it right now, i might as well not continue fixing it.&#10;&#10;&#10;Committed on 12:34pm of 18th of December 2023. &#10;&#10;PS: One of the hardest bugs to ever fix and find.&#10;&#10;-SerenicuS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some Bugs are fixed.&#10;&#10;This is a much better update, fixed the synchronization issues but has phantom bug that cannot be found for some reason when I exited the program, leading to load and save feature not in sync&#10;&#10;TODO: If possible, try to fix the exit load and save bug&#10;&#10;FIXME more details:&#10;When I dipose the frame, the load and save progress and its contents are synchronized. However, when I try to exit the frame, it will lead to some phantom bugs that I cannot really fix even though my program has literally Debug Statements all over it. If i can't fix it right now, i might as well not continue fixing it.&#10;&#10;&#10;Committed on 12:34pm of 18th of December 2023. &#10;&#10;PS: One of the hardest bugs to ever fix and find.&#10;&#10;-SerenicuS" />
+    <MESSAGE value="This Program is now clean,&#10;&#10;This is the pre-final update, all is good and much of it are now synchronized. Although I still didn't scrutinize it to the point that I am going to hate it. Still it looks clean now.&#10;&#10;&#10;Suggestions:&#10;1. Add a DELETE BUTTON.&#10;&#10;&#10;Committed on 2:01pm of 18th of December 2023. &#10;&#10;PS: Fixed the Load and Save Bug after exiting the program. Whether I or not add a delete button will depends on the time remaining.&#10;&#10;-SerenicuS" />
+    <option name="LAST_COMMIT_MESSAGE" value="This Program is now clean,&#10;&#10;This is the pre-final update, all is good and much of it are now synchronized. Although I still didn't scrutinize it to the point that I am going to hate it. Still it looks clean now.&#10;&#10;&#10;Suggestions:&#10;1. Add a DELETE BUTTON.&#10;&#10;&#10;Committed on 2:01pm of 18th of December 2023. &#10;&#10;PS: Fixed the Load and Save Bug after exiting the program. Whether I or not add a delete button will depends on the time remaining.&#10;&#10;-SerenicuS" />
   </component>
 </project>
