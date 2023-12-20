@@ -119,9 +119,13 @@ public class Main extends JFrame implements ActionListener, WindowListener {
 
             System.out.println("START RUN---------------");
 
-            StartGameplayForm start1 = new StartGameplayForm();
 
-            start1.setLocation(lastLocation);
+            SwingUtilities.invokeLater(() -> {
+                // Code that needs to run on the EDT
+                StartGameplayForm start1 = new StartGameplayForm();
+                start1.setLocation(lastLocation);
+
+            });
 
 
         }

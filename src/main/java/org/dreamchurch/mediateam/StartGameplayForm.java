@@ -48,6 +48,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     Image scaledImagerCat;
 
     private JLabel boughtCatShowIcon;
+    private JLabel boughtCatLabel;
 
 
 
@@ -644,6 +645,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             setVisible(true);
 
+            repaint();
+            revalidate();
+
             System.out.println("Cat1 animated GIF is added");
             System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
             System.out.println("Block 1 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
@@ -665,6 +669,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             add(boughtCatLabel);
 
             setVisible(true);
+
+            repaint();
+            revalidate();
 
             System.out.println("Cat2 animated GIF is added");
             System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
@@ -688,6 +695,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             setVisible(true);
 
+            repaint();
+            revalidate();
+
             System.out.println("Cat3 animated GIF is added");
             System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
             System.out.println("Block 3 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
@@ -709,6 +719,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             add(boughtCatLabel);
 
             setVisible(true);
+
+            repaint();
+            revalidate();
 
             System.out.println("Cat4 animated GIF is added");
             System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
@@ -869,7 +882,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("SENSITIVE AND IMPORTANT: SetUserPutName(catStorage[counter], arrangementofCats) ended its call");
 
 
-            boughtCatShowIcon.setVisible(false);
+            boughtCatLabel.setVisible(false);
             counter++;
 
             System.out.println("FUNCTION: PetInformationInstantiation ended the Purchase feature");
@@ -970,16 +983,23 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         System.out.println("FUNCTION: LoadImageCat started its run");
         System.out.println("Check Values of boolean Variables isCatBought1-4: " + tempisCatBought1 + tempisCatBought2 + tempisCatBought3 + tempisCatBought4);
 
-        boughtCatImage = new ImageIcon("PET CATS/Cat" + n + ".png");
-        scaledImagerCat = boughtCatImage.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
-        scaledImageofCatFinal = new ImageIcon(scaledImagerCat);
+        boughtCatImage = new ImageIcon("PET CATS/cat" + n + "animated" + ".gif");
+        Image originalImage = boughtCatImage.getImage();
+        Image scaledImage = originalImage.getScaledInstance(120, 120, Image.SCALE_DEFAULT);
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-        boughtCatShowIcon = new JLabel(scaledImageofCatFinal);
-        boughtCatShowIcon.setBounds(70, 430, 200, 200);
-        catInfo.add(boughtCatShowIcon, BorderLayout.WEST);
+        boughtCatLabel = new JLabel(scaledIcon);
 
-        boughtCatShowIcon.setVisible(true);
+        boughtCatLabel.setBounds(150, 450, 200, 200); // Adjust size as needed
 
+        add(boughtCatLabel);
+
+        setVisible(true);
+
+
+        catInfo.add(boughtCatLabel, BorderLayout.WEST);
+
+        boughtCatLabel.setVisible(true);
 
 
         System.out.println("FUNCTION: LoadImageCat ended its run");
@@ -1606,7 +1626,6 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(petShopButton))");
 
-            setEnabled(false);
             PetShop.setVisible(true);
 
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(petShopButton)) ended its run");
@@ -1623,19 +1642,17 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat1Buy)) started its run");
 
-            tempisCatBought1 = true;
-
-            setEnabled(false);
-            PetShop.setEnabled(false);
-
-            catInfo.setVisible(true);
-
             LoadImageCat(1);
 
-            catInfo.revalidate();
-            catInfo.repaint();
+            tempisCatBought1 = true;
+            setEnabled(false);
+            PetShop.setEnabled(false);
+            catInfo.setVisible(true);
 
 
+
+
+            setEnabled(false);
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat1Buy)) ended its run");
             System.out.println("---------------------------------------------------------");
 
@@ -1645,17 +1662,17 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat2Buy)) started its run, calling the LoadImageCat Function");
 
-
             tempisCatBought2 = true;
+            LoadImageCat(2);
 
             setEnabled(false);
             PetShop.setEnabled(false);
-
             catInfo.setVisible(true);
 
-            LoadImageCat(2);
-            catInfo.revalidate();
-            catInfo.repaint();
+
+
+
+
 
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat2Buy)) ended its run");
             System.out.println("---------------------------------------------------------");
@@ -1666,17 +1683,16 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat3Buy)) started its run, calling the LoadImageCat Function");
 
+            LoadImageCat(3);
+
             tempisCatBought3 = true;
 
             setEnabled(false);
             PetShop.setEnabled(false);
-
-
             catInfo.setVisible(true);
 
-            LoadImageCat(3);
-            catInfo.revalidate();
-            catInfo.repaint();
+
+
 
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat3Buy)) ended its run");
             System.out.println("---------------------------------------------------------");
@@ -1687,18 +1703,14 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat4Buy)) started its run, calling the LoadImageCat Function");
 
+            LoadImageCat(4);
+
+            tempisCatBought4 = true;
 
             setEnabled(false);
             PetShop.setEnabled(false);
-            tempisCatBought4 = true;
-
-
-
             catInfo.setVisible(true);
 
-            LoadImageCat(4);
-            catInfo.revalidate();
-            catInfo.repaint();
 
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat4Buy)) ended its run");
             System.out.println("---------------------------------------------------------");
@@ -1710,10 +1722,12 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(buyCat)) started its run, calling the CatTransaction Function");
 
 
-            setEnabled(true);
-            PetShop.setEnabled(true);
 
             CatTransaction(100);
+
+            setEnabled(true);
+            PetShop.setVisible(true);
+
 
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(buyCat)) ended its run");
             System.out.println("---------------------------------------------------------");
@@ -1729,9 +1743,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             PetShop.setEnabled(true);
             BooleanDisabler();
 
-
-
-            boughtCatShowIcon.setVisible(false);
+            boughtCatLabel.setVisible(false);
             catInfo.dispose();
 
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(cancelBuy)) ended its run");
@@ -1919,7 +1931,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("WINDOW CLOSING PERFORMED:  if(e.getSource().equals(catInfo)) started its run, setting all boolean isCatBought1-5 to false");
 
-            boughtCatShowIcon.setVisible(false);
+            boughtCatLabel.setVisible(false);
             tempisCatBought1 = false;
             tempisCatBought2 = false;
             tempisCatBought3 = false;

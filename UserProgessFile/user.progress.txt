@@ -1,1 +1,1 @@
-29600,false,false,false,false,
+28400,true,true,false,false,2,[dooo, ddd, , ],[1, 2]
