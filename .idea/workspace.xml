@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="">
+    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="Pre-alpha 1.3v Catville&#10;&#10;&#10;Fixed the bug/glitch in catPicPanel in PetInformationFrame&#10;-SerenicuS">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserProgessFile/user.progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UserProgessFile/user.progress.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" afterDir="false" />
     </list>
@@ -192,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702897817048</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Pre-alpha 1.3v Catville&#10;&#10;&#10;Fixed the bug/glitch in catPicPanel in PetInformationFrame&#10;-SerenicuS">
+      <option name="closed" value="true" />
+      <created>1703081018599</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703081018599</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +229,7 @@
     <MESSAGE value="Some Bugs are fixed.&#10;&#10;This is a much better update, fixed the synchronization issues but has phantom bug that cannot be found for some reason when I exited the program, leading to load and save feature not in sync&#10;&#10;TODO: If possible, try to fix the exit load and save bug&#10;&#10;FIXME more details:&#10;When I dipose the frame, the load and save progress and its contents are synchronized. However, when I try to exit the frame, it will lead to some phantom bugs that I cannot really fix even though my program has literally Debug Statements all over it. If i can't fix it right now, i might as well not continue fixing it.&#10;&#10;&#10;Committed on 12:34pm of 18th of December 2023. &#10;&#10;PS: One of the hardest bugs to ever fix and find.&#10;&#10;-SerenicuS" />
     <MESSAGE value="This Program is now clean,&#10;&#10;This is the pre-final update, all is good and much of it are now synchronized. Although I still didn't scrutinize it to the point that I am going to hate it. Still it looks clean now.&#10;&#10;&#10;Suggestions:&#10;1. Add a DELETE BUTTON.&#10;&#10;&#10;Committed on 2:01pm of 18th of December 2023. &#10;&#10;PS: Fixed the Load and Save Bug after exiting the program. Whether I or not add a delete button will depends on the time remaining.&#10;&#10;-SerenicuS" />
     <MESSAGE value="FINAL OOP PROJECT PRE-ALPHA CatVille&#10;&#10;This is the Pre-Alpha Program &quot;CatVille&quot;.&#10;&#10;Committed and scrutinized at 7:08pm on 18th of December 2023. &#10;&#10;PS: I scrutinized, clean, and organized this code now. Although there are still functions that are not optimized, like using if statements instead of parameters. It is still working properly&#10;&#10;-SerenicuS" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINAL OOP PROJECT PRE-ALPHA CatVille&#10;&#10;This is the Pre-Alpha Program &quot;CatVille&quot;.&#10;&#10;Committed and scrutinized at 7:08pm on 18th of December 2023. &#10;&#10;PS: I scrutinized, clean, and organized this code now. Although there are still functions that are not optimized, like using if statements instead of parameters. It is still working properly&#10;&#10;-SerenicuS" />
+    <MESSAGE value="Pre-alpha 1.3v Catville&#10;&#10;&#10;Fixed the bug/glitch in catPicPanel in PetInformationFrame&#10;-SerenicuS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pre-alpha 1.3v Catville&#10;&#10;&#10;Fixed the bug/glitch in catPicPanel in PetInformationFrame&#10;-SerenicuS" />
   </component>
 </project>

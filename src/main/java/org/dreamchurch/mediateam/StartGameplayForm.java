@@ -719,7 +719,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             JLabel boughtCatGameplayinLabel = new JLabel(boughtCatGameplayImageCompleteScaled);
 
-            boughtCatGameplayinLabel.setBounds(700, 340, 200, 200);
+            boughtCatGameplayinLabel.setBounds(700, 360, 200, 200);
 
             add(boughtCatGameplayinLabel);
 
@@ -945,7 +945,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
 
                 int x = -35;
-                int y = (arrangementofCats.indexOf(catIndex) * 130);
+                int y = (arrangementofCats.indexOf(catIndex) * 135);
 
                 System.out.println("CHECK Y SETUSER: "+  catIndex);
 
@@ -1278,7 +1278,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
 
                 int x = -35;
-                int y = (arrangementofCats.indexOf(catIndex) * 130);
+                int y = (arrangementofCats.indexOf(catIndex) * 135);
 
                 boughtCatGameplayinLabel.setBounds(x, y, 190, 190);
 

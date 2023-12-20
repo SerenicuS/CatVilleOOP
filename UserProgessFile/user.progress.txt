@@ -1,1 +1,1 @@
-95300,true,true,true,true,4,[we, rt, asd, trt],[1, 2, 3, 4]
+94700,true,true,true,true,4,[Mimi, Dowy, Borea, Tol],[4, 2, 1, 3]
