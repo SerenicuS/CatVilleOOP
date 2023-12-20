@@ -117,6 +117,7 @@ public class Main extends JFrame implements ActionListener, WindowListener {
 
             setVisible(false);
 
+
             System.out.println("START RUN---------------");
 
 

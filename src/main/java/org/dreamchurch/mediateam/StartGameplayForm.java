@@ -628,7 +628,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         System.out.println("---------------------------------------------------------");
         System.out.println("FUNCTION: SpawnCat started to run the if statements");
 
-        if (tempisCatBought1 && !finalCatBought1) {
+        if(tempisCatBought1 && !finalCatBought1) {
             System.out.println("Running the finalCatBought1 block");
 
             ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat1animated.gif");
@@ -653,7 +653,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("Block 1 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
         }
-        if (tempisCatBought2 && !finalCatBought2) {
+         if (tempisCatBought2 && !finalCatBought2) {
             System.out.println("Running the finalCatBought1 block");
 
             ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat2animated.gif");
@@ -678,7 +678,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("Block 2 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
         }
-        if (tempisCatBought3 && !finalCatBought3) {
+         if (tempisCatBought3 && !finalCatBought3) {
             System.out.println("Running the finalCatBought3 block");
 
             ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat3animated.gif");
@@ -703,7 +703,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("Block 3 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
         }
-        if (tempisCatBought4 && !finalCatBought4) {
+         if (tempisCatBought4 && !finalCatBought4) {
             System.out.println("Running the finalCatBought4 block");
 
             ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat4animated.gif");
@@ -724,7 +724,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             revalidate();
 
             System.out.println("Cat4 animated GIF is added");
-            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Ending the finalCatBought4 block, checking the values before proceeding");
             System.out.println("Block 4 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
         }
@@ -809,7 +809,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             }
 
-            else if (tempisCatBought2 && !finalCatBought2) {
+             if (tempisCatBought2 && !finalCatBought2) {
 
                 System.out.println("If (isCatBought2) block started its run");
 
@@ -830,7 +830,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             }
 
-            else if (tempisCatBought3 && !finalCatBought3) {
+             if (tempisCatBought3 && !finalCatBought3) {
 
                 System.out.println("If (isCatBought3) block started its run");
 
@@ -851,7 +851,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             }
 
-            else if (tempisCatBought4 && !finalCatBought4) {
+             if (tempisCatBought4 && !finalCatBought4) {
 
                 System.out.println("If (isCatBought4) block started its run");
 
@@ -919,16 +919,18 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         System.out.println("---------------------------------------------------------");
         System.out.println("FUNCTION: SetUserPutName started its run, started the for loop run");
 
+
+
         JTextField[] catTextFields = {cat1TxtName, cat2TxtName, cat3TxtName, cat4TxtName};
 
         for (int catIndex : arrangement) {
 
             System.out.println("FOR LOOP: for (int catIndex : arrangement) was checked");
 
-            String imagePath = "PET CATS/Cat" + catIndex + ".png";
+            String imagePath = "PET CATS/cat" + catIndex + "animated" +  ".gif";
 
             ImageIcon boughtCat = new ImageIcon(imagePath);
-            Image scaledImager = boughtCat.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+            Image scaledImager = boughtCat.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
             ImageIcon scaledImageofCat = new ImageIcon(scaledImager);
 
             int x = -35;
@@ -1232,6 +1234,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         System.out.println("---------------------------------------------------------");
         System.out.println("FUNCTION: loadBoughtCats started its run");
 
+        petInformationFrame.repaint();
+        petInformationFrame.revalidate();
+
         System.out.println("Check PreLoadBoughtCats values of arrangementofCats: " + arrangementofCats);
         System.out.println("CHECK PreLoadBoughtCats size of arrangementofCats: " + arrangementofCats.size());
         System.out.println("CHECK PreLoadBoughtCats isEmpty? : " + arrangementofCats.isEmpty());
@@ -1244,6 +1249,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             for (int catIndex : arrangementofCats) {
                 String imagePath = "PET CATS/cat" + catIndex + "animated.gif";
+                System.out.println("LOOP LOAD CHECK?" + arrangementofCats);
 
                 ImageIcon boughtCatIcon = new ImageIcon(imagePath);
 
@@ -1256,6 +1262,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
                 JLabel boughtCatShow = new JLabel(scaledIcon);
 
                 catPicPanel.add(boughtCatShow);
+                catPicPanel.repaint();
+                catPicPanel.revalidate();
             }
 
 
@@ -1726,7 +1734,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             CatTransaction(100);
 
             setEnabled(true);
-            PetShop.setVisible(true);
+            PetShop.setVisible(false);
+            PetShop.setEnabled(true);
+            catInfo.dispose();
 
 
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(buyCat)) ended its run");
@@ -1985,22 +1995,6 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         Miscellaneous
      */
 
-    private ImageIcon resizeImageIcon(ImageIcon originalIcon, int width, int height) {
-
-        System.out.println("---------------------------------------------------------");
-        System.out.println("IMAGEICON FUNCTION:  resizeImageIcon started its run");
-
-        Image originalImage = originalIcon.getImage();
-        Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-
-        System.out.println("IMAGEICON FUNCTION:  resizeImageIcon ended its run, returning resizeImage");
-        System.out.println("---------------------------------------------------------");
-
-        return new ImageIcon(resizedImage);
-
-
-
-    }
 
     private JLabel createResizedLabelforGif(String imagePath, int width, int height) {
         ImageIcon originalIcon = new ImageIcon(imagePath);
