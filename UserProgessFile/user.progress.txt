@@ -1,1 +1,1 @@
-300,false,false,false,false,
+95300,true,true,true,true,4,[we, rt, asd, trt],[1, 2, 3, 4]
