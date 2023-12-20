@@ -383,13 +383,16 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         petShopFont = new Font("Comic Sans MS", Font.PLAIN, 15);
 
-        cat1 = new JLabel(resizeImageIcon(new ImageIcon("PET CATS/Cat1.png"), 150, 150));
+        cat1 = createResizedLabelforGif("PET CATS/cat1animated.gif", 100, 100);
         cat1.setBounds(30, 20, 150, 150);
-        cat2 = new JLabel(resizeImageIcon(new ImageIcon("PET CATS/Cat2.png"), 240, 240));
+
+        cat2 = createResizedLabelforGif("PET CATS/cat2animated.gif", 100, 100);
         cat2.setBounds(190, 20, 150, 150);
-        cat3 = new JLabel(resizeImageIcon(new ImageIcon("PET CATS/Cat3.png"), 240, 240));
+
+        cat3 = createResizedLabelforGif("PET CATS/cat3animated.gif", 100, 100);
         cat3.setBounds(350, 20, 150, 150);
-        cat4 = new JLabel(resizeImageIcon(new ImageIcon("PET CATS/Cat4.png"), 180, 170));
+
+        cat4 = createResizedLabelforGif("PET CATS/cat4animated.gif", 100, 100);
         cat4.setBounds(510, 20, 150, 150);
 
         cat1Buy = new JButton("100 CatCoinz");
@@ -624,106 +627,94 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         System.out.println("---------------------------------------------------------");
         System.out.println("FUNCTION: SpawnCat started to run the if statements");
 
-        if(tempisCatBought1 && !finalCatBought1){
+        if (tempisCatBought1 && !finalCatBought1) {
+            System.out.println("Running the finalCatBought1 block");
 
+            ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat1animated.gif");
 
-            System.out.println("Running the isCatBought1 block");
+            Image originalImage = boughtCatIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(130, 130, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-            ImageIcon boughtCat = new ImageIcon("PET CATS/Cat1.png");
+            JLabel boughtCatLabel = new JLabel(scaledIcon);
 
+            boughtCatLabel.setBounds(150, 450, 200, 200); // Adjust size as needed
 
+            add(boughtCatLabel);
 
+            setVisible(true);
 
-            Image scaledImager = boughtCat.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
-
-            ImageIcon scaledImageofCat = new ImageIcon(scaledImager);
-
-            JLabel boughtCatShow = new JLabel(scaledImageofCat);
-            boughtCatShow.setBounds(70, 430, 200, 200);
-
-            add(boughtCatShow);
-
-            revalidate();
-            repaint();
-
-            System.out.println("Cat1 is added");
-            System.out.println("Ending the isCatBought1 block, checking the values before proceeding");
-            System.out.println("Block 1 visiblity of boughtCatShow" + boughtCatShow.isVisible());
+            System.out.println("Cat1 animated GIF is added");
+            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Block 1 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
-
         }
-        if(tempisCatBought2 && !finalCatBought2){
+        if (tempisCatBought2 && !finalCatBought2) {
+            System.out.println("Running the finalCatBought1 block");
 
-            System.out.println("Running the isCatBought2 block");
+            ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat2animated.gif");
 
-            ImageIcon boughtCat = new ImageIcon("PET CATS/Cat2.png");
+            Image originalImage = boughtCatIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(110, 110, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-            Image scaledImager = boughtCat.getImage().getScaledInstance(350, 350, Image.SCALE_SMOOTH);
+            JLabel boughtCatLabel = new JLabel(scaledIcon);
 
-            ImageIcon scaledImageofCat = new ImageIcon(scaledImager);
+            boughtCatLabel.setBounds(330, 343, 200, 200); // Adjust size as needed
 
-            JLabel boughtCatShow = new JLabel(scaledImageofCat);
-            boughtCatShow.setBounds(600, 330, 200, 200);
+            add(boughtCatLabel);
 
-            add(boughtCatShow);
-            revalidate();
-            repaint();
+            setVisible(true);
 
-            System.out.println("Cat2 is added");
-            System.out.println("Ending the isCatBought2 block, checking the values before proceeding");
-            System.out.println("Block 2 visiblity of boughtCatShow" + boughtCatShow.isVisible());
+            System.out.println("Cat2 animated GIF is added");
+            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Block 2 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
-
         }
-        if(tempisCatBought3  && !finalCatBought3){
+        if (tempisCatBought3 && !finalCatBought3) {
+            System.out.println("Running the finalCatBought3 block");
 
-            System.out.println("Running the isCatBought3 block");
+            ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat3animated.gif");
 
-            ImageIcon boughtCat = new ImageIcon("PET CATS/Cat3.png");
+            Image originalImage = boughtCatIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(120, 120, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-            Image scaledImager = boughtCat.getImage().getScaledInstance(350, 350, Image.SCALE_SMOOTH);
+            JLabel boughtCatLabel = new JLabel(scaledIcon);
 
-            ImageIcon scaledImageofCat = new ImageIcon(scaledImager);
+            boughtCatLabel.setBounds(600, 450, 200, 200); // Adjust size as needed
 
-            JLabel boughtCatShow = new JLabel(scaledImageofCat);
-            boughtCatShow.setBounds(500, 250, 600, 600);
+            add(boughtCatLabel);
 
-            add(boughtCatShow);
-            revalidate();
-            repaint();
+            setVisible(true);
 
-            System.out.println("Cat3 is added");
-            System.out.println("Ending the isCatBought3 block, checking the values before proceeding");
-            System.out.println("Block 3 visiblity of boughtCatShow" + boughtCatShow.isVisible());
+            System.out.println("Cat3 animated GIF is added");
+            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Block 3 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
-
         }
-        if(tempisCatBought4  && !finalCatBought4){
+        if (tempisCatBought4 && !finalCatBought4) {
+            System.out.println("Running the finalCatBought4 block");
 
+            ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat4animated.gif");
 
-            System.out.println("Running the isCatBought4 block");
+            Image originalImage = boughtCatIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(170, 170, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-            ImageIcon boughtCat = new ImageIcon("PET CATS/Cat4.png");
+            JLabel boughtCatLabel = new JLabel(scaledIcon);
 
-            Image scaledImager = boughtCat.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+            boughtCatLabel.setBounds(700, 340, 200, 200); // Adjust size as needed
 
-            ImageIcon scaledImageofCat = new ImageIcon(scaledImager);
+            add(boughtCatLabel);
 
-            JLabel boughtCatShow = new JLabel(scaledImageofCat);
-            boughtCatShow.setBounds(800, 330, 400, 400);
+            setVisible(true);
 
-            add(boughtCatShow);
-            revalidate();
-            repaint();
-
-
-            System.out.println("Cat4 is added");
-            System.out.println("Ending the isCatBought4 block, checking the values before proceeding");
-            System.out.println("Block 4 visiblity of boughtCatShow" + boughtCatShow.isVisible());
+            System.out.println("Cat4 animated GIF is added");
+            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Block 4 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
-
         }
-
 
 
     }
@@ -1049,13 +1040,13 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         System.out.println("---------------------------------------------------------");
         System.out.println("FUNCTION: respawnCat started to run the if statements");
 
+      /*
         if (finalCatBought1) {
 
 
             System.out.println("Running the finalCatBought1 block");
 
             ImageIcon boughtCat = new ImageIcon("PET CATS/Cat1.png");
-
 
             Image scaledImager = boughtCat.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
 
@@ -1064,7 +1055,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             JLabel boughtCatShow = new JLabel(scaledImageofCat);
             boughtCatShow.setBounds(70, 430, 200, 200);
 
-            add(boughtCatShow);
+
 
             revalidate();
             repaint();
@@ -1075,76 +1066,94 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
 
         }
-        if (finalCatBought2) {
+       */
+        if (finalCatBought1) {
+            System.out.println("Running the finalCatBought1 block");
 
-            System.out.println("Running the finalCatBought2 block");
+            ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat1animated.gif");
 
-            ImageIcon boughtCat = new ImageIcon("PET CATS/Cat2.png");
+            Image originalImage = boughtCatIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(130, 130, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-            Image scaledImager = boughtCat.getImage().getScaledInstance(350, 350, Image.SCALE_SMOOTH);
+            JLabel boughtCatLabel = new JLabel(scaledIcon);
 
-            ImageIcon scaledImageofCat = new ImageIcon(scaledImager);
+            boughtCatLabel.setBounds(150, 450, 200, 200); // Adjust size as needed
 
-            JLabel boughtCatShow = new JLabel(scaledImageofCat);
-            boughtCatShow.setBounds(600, 330, 200, 200);
+            add(boughtCatLabel);
 
-            add(boughtCatShow);
-            revalidate();
-            repaint();
+            setVisible(true);
 
-            System.out.println("Cat2 is added");
-            System.out.println("Ending the finalCatBought2 block, checking the values before proceeding");
-            System.out.println("Block 2 visiblity of boughtCatShow" + boughtCatShow.isVisible());
+            System.out.println("Cat1 animated GIF is added");
+            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Block 1 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
+        }
+        if (finalCatBought2) {
+            System.out.println("Running the finalCatBought1 block");
 
+            ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat2animated.gif");
+
+            Image originalImage = boughtCatIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(110, 110, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+            JLabel boughtCatLabel = new JLabel(scaledIcon);
+
+            boughtCatLabel.setBounds(330, 340, 200, 200); // Adjust size as needed
+
+            add(boughtCatLabel);
+
+            setVisible(true);
+
+            System.out.println("Cat2 animated GIF is added");
+            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Block 2 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
+            System.out.println("---------------------------------------------------------");
         }
         if (finalCatBought3) {
-
             System.out.println("Running the finalCatBought3 block");
 
-            ImageIcon boughtCat = new ImageIcon("PET CATS/Cat3.png");
+            ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat3animated.gif");
 
-            Image scaledImager = boughtCat.getImage().getScaledInstance(350, 350, Image.SCALE_SMOOTH);
+            Image originalImage = boughtCatIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(120, 120, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-            ImageIcon scaledImageofCat = new ImageIcon(scaledImager);
+            JLabel boughtCatLabel = new JLabel(scaledIcon);
 
-            JLabel boughtCatShow = new JLabel(scaledImageofCat);
-            boughtCatShow.setBounds(500, 250, 600, 600);
+            boughtCatLabel.setBounds(600, 450, 200, 200);// Adjust size as needed
 
-            add(boughtCatShow);
-            revalidate();
-            repaint();
+            add(boughtCatLabel);
 
-            System.out.println("Cat3 is added");
-            System.out.println("Ending thefinalCatBought3 block, checking the values before proceeding");
-            System.out.println("Block 3 visiblity of boughtCatShow" + boughtCatShow.isVisible());
+            setVisible(true);
+
+            System.out.println("Cat3 animated GIF is added");
+            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Block 3 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
-
         }
         if (finalCatBought4) {
-
-
             System.out.println("Running the finalCatBought4 block");
 
-            ImageIcon boughtCat = new ImageIcon("PET CATS/Cat4.png");
+            ImageIcon boughtCatIcon = new ImageIcon("PET CATS/cat4animated.gif");
 
-            Image scaledImager = boughtCat.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+            Image originalImage = boughtCatIcon.getImage();
+            Image scaledImage = originalImage.getScaledInstance(170, 170, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
-            ImageIcon scaledImageofCat = new ImageIcon(scaledImager);
+            JLabel boughtCatLabel = new JLabel(scaledIcon);
 
-            JLabel boughtCatShow = new JLabel(scaledImageofCat);
-            boughtCatShow.setBounds(800, 330, 400, 400);
+            boughtCatLabel.setBounds(700, 340, 200, 200); // Adjust size as needed
 
-            add(boughtCatShow);
-            revalidate();
-            repaint();
+            add(boughtCatLabel);
 
+            setVisible(true);
 
-            System.out.println("Cat4 is added");
-            System.out.println("Ending the finalCatBought4 block, checking the values before proceeding");
-            System.out.println("Block 4 visiblity of boughtCatShow" + boughtCatShow.isVisible());
+            System.out.println("Cat4 animated GIF is added");
+            System.out.println("Ending the finalCatBought1 block, checking the values before proceeding");
+            System.out.println("Block 4 visibility of boughtCatLabel: " + boughtCatLabel.isVisible());
             System.out.println("---------------------------------------------------------");
-
         }
 
     }
@@ -1200,7 +1209,6 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     }
 
     private void loadBoughtCats() {
-
         System.out.println("---------------------------------------------------------");
         System.out.println("FUNCTION: loadBoughtCats started its run");
 
@@ -1209,50 +1217,36 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         System.out.println("CHECK PreLoadBoughtCats isEmpty? : " + arrangementofCats.isEmpty());
 
         if (arrangementofCats != null) {
-
             System.out.println("if (arrangementofCats != null) block is checked");
 
             catPicPanel.removeAll();
-
+            catPicPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 40)); // Adjust spacing as needed
 
             for (int catIndex : arrangementofCats) {
+                String imagePath = "PET CATS/cat" + catIndex + "animated.gif";
 
-                String imagePath = "PET CATS/Cat" + catIndex + ".png";
+                ImageIcon boughtCatIcon = new ImageIcon(imagePath);
 
-                ImageIcon boughtCat = new ImageIcon(imagePath);
-                Image scaledImage = boughtCat.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
-                ImageIcon scaledImageofCat = new ImageIcon(scaledImage);
+                Image originalImage = boughtCatIcon.getImage();
 
-                int x = -35;
-                int y = (arrangementofCats.indexOf(catIndex) * 140);
+                Image scaledImage = originalImage.getScaledInstance(100, 100, Image.SCALE_DEFAULT);
 
-                JLabel boughtCatShow = new JLabel(scaledImageofCat);
-                boughtCatShow.setBounds(x, y, 200, 200);
+                ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+                JLabel boughtCatShow = new JLabel(scaledIcon);
 
                 catPicPanel.add(boughtCatShow);
-
-                petInformationFrame.repaint();
-                petInformationFrame.revalidate();
-
-                System.out.println("Check loadBoughtCats Variables before ending its run");
-                System.out.println("Check Y coordinates of CatImage: "+  y);
-                System.out.println("Check the Root location of the CatImage: " + imagePath);
-                System.out.println("SHOW LOCATION OF THE CAT in the loadBoughtCats: " + imagePath);
-                System.out.println("Check AfterLoadBoughtCats values of arrangementofCats: " + arrangementofCats);
-                System.out.println("CHECK AfterLoadBoughtCats size of arrangementofCats: " + arrangementofCats.size());
-                System.out.println("CHECK AfterLoadBoughtCats isEmpty? : " + arrangementofCats.isEmpty());
-
             }
+
 
             catPicPanel.repaint();
             catPicPanel.revalidate();
-
         }
 
         System.out.println("FUNCTION: loadBoughtCats ended its run");
         System.out.println("---------------------------------------------------------");
-
     }
+
 
     //BETA FEATURES OF STORING THE PROGRESS OF THE USER, THIS ELIMINATES THE RESTART BUG
 
@@ -1994,6 +1988,18 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
 
 
+    }
+
+    private JLabel createResizedLabelforGif(String imagePath, int width, int height) {
+        ImageIcon originalIcon = new ImageIcon(imagePath);
+        ImageIcon resizedIcon = resizeGifIcon(originalIcon, width, height);
+        return new JLabel(resizedIcon);
+    }
+
+    private ImageIcon resizeGifIcon(ImageIcon icon, int width, int height) {
+        Image image = icon.getImage();
+        Image scaledImage = image.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+        return new ImageIcon(scaledImage);
     }
 
 }

@@ -28,13 +28,20 @@ public class Main extends JFrame implements ActionListener, WindowListener {
 
         try {
 
-            BufferedImage backgroundImage = ImageIO.read(new File("StartMenuFiles/Gamebackground.png"));
-            setContentPane(new BackgroundPanel(backgroundImage));
+            ImageIcon gifIcon = new ImageIcon("StartMenuFiles/pixelhouse.gif");
 
-        } catch (IOException e) {
+
+            Image scaledImage = gifIcon.getImage().getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+
+            setContentPane(new JLabel(scaledIcon));
+
+
+            setLayout(new FlowLayout());
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         StartMenuDeclaration();
 
         String filePath = "Music/menumusic.wav";
@@ -84,6 +91,8 @@ public class Main extends JFrame implements ActionListener, WindowListener {
         creditsButton.addActionListener(this);
 
     }
+
+
 
     /*
         THE MAIN FUNCTION
