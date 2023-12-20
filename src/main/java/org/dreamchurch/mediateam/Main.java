@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.*;
+
 /*
     CREATOR: HAROLD KARL FRANZE R. ALONSAGAY
     COURSE AND YEAR: BSIT-2ND YEAR
@@ -28,10 +29,16 @@ public class Main extends JFrame implements ActionListener, WindowListener {
 
         try {
 
-            BufferedImage backgroundImage = ImageIO.read(new File("StartMenuFiles/Gamebackground.png"));
-            setContentPane(new BackgroundPanel(backgroundImage));
+            ImageIcon menuBackgroundImage = new ImageIcon("StartMenuFiles/pixelhouse.gif");
 
-        } catch (IOException e) {
+            Image menuBackgroundScaledImage = menuBackgroundImage.getImage().getScaledInstance(800, 600, Image.SCALE_DEFAULT);
+
+            ImageIcon menuBackgroundScaledIcon = new ImageIcon(menuBackgroundScaledImage);
+
+            setContentPane(new JLabel(menuBackgroundScaledIcon));
+
+            setLayout(new FlowLayout());
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -165,6 +172,7 @@ public class Main extends JFrame implements ActionListener, WindowListener {
         PLAYING OF MUSIC
      */
 
+
      public void PlayMusicInBackground(String filePath) {
         SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
             @Override
@@ -214,4 +222,5 @@ public class Main extends JFrame implements ActionListener, WindowListener {
             e.printStackTrace();
         }
     }
+
 }
