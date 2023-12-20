@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="FINAL OOP PROJECT PRE-ALPHA CatVille&#10;&#10;This is the Pre-Alpha Program &quot;CatVille&quot;.&#10;&#10;Committed and scrutinized at 7:08pm on 18th of December 2023. &#10;&#10;PS: I scrutinized, clean, and organized this code now. Although there are still functions that are not optimized, like using if statements instead of parameters. It is still working properly&#10;&#10;-SerenicuS">
-      <change afterPath="$PROJECT_DIR$/PET CATS/cat1animated.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PET CATS/cat2animated.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PET CATS/cat3animated.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PET CATS/cat4animated.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StartMenuFiles/pixelhouse.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="623af221-e3c7-41fe-9b27-e6ae031b7bda" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/UserProgessFile/user.progress.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UserProgessFile/user.progress.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/CatData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/dreamchurch/mediateam/StartGameplayForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,19 +66,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultPlantUmlFileTemplate": "UML Class",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Admin/IdeaProjects/GitRepository/CatVilleOOP-main",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/IdeaProjects/GitRepository/CatVilleOOP-main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\IdeaProjects\GitRepository\CatVille\PET CATS" />

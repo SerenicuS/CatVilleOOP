@@ -958,7 +958,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
                 System.out.println("SetUserPutName Values: ");
                 System.out.println("SHOW LOCATION OF THE CAT: " + boughtCatGameplaySpawn);
                 System.out.println("SHOW arrangement: " + arrangement);
-                System.out.println("SHOW catIndex: " + counter);
+                System.out.println("SHOW catIndex: " + catIndex);
                 System.out.println("is " + arrangement + " cat visible?: " + boughtCatGameplayinLabel.isVisible());
                 System.out.println("SHOW Y calculations: " + " arrangement.indexOf(catIndex): " + arrangementofCats.indexOf(catIndex) + " * " + " 140");
 
