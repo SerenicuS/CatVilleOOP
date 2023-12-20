@@ -1,1 +1,1 @@
-300,false,false,false,false,0,[, , , ],[]
+100,false,true,false,true,2,[doo, Bi, , ],[2, 4]

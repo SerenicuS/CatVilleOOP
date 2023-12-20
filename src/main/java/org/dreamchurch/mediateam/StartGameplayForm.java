@@ -6,7 +6,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -74,7 +73,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
     /*
         EDIT CAT FRAME
      */
-    JFrame editTool;
+    JFrame EditTool;
 
     private JButton saveCat, cancelSave;
     private JPanel editInfoPanel, editInfoButtonPanel;
@@ -1261,17 +1260,17 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
         THIS CODE IS STILL IN BETA, PROCEED WITH CAUTION!
      */
 
-    public void EditTheCatInfo() {
+    public void EditTool() {
 
         System.out.println("---------------------------------------------------------");
         System.out.println("FUNCTION: EditTheCatInfo started its run");
 
-        editTool = new JFrame();
+        EditTool = new JFrame();
         editInfoPanel = new JPanel();
-        editTool.setTitle("Edit Tool");
-        editTool.setSize(500, 300);
-        editTool.setLayout(new BorderLayout(2, 2));
-        editTool.add(editInfoPanel, BorderLayout.CENTER);
+        EditTool.setTitle("Edit Tool");
+        EditTool.setSize(500, 300);
+        EditTool.setLayout(new BorderLayout(2, 2));
+        EditTool.add(editInfoPanel, BorderLayout.CENTER);
 
         System.out.println("FUNCTION TO FUNCTION: EditTheCatInfo is calling EditTheCatInfoInstantiation");
 
@@ -1279,9 +1278,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
         System.out.println("FUNCTION TO FUNCTION: EditTheCatInfo ended its calling of EditTheCatInfoInstantiation");
 
-        editTool.setVisible(true);
-        editTool.setLocationRelativeTo(null);
-        editTool.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        EditTool.setVisible(true);
+        EditTool.setLocationRelativeTo(null);
+        EditTool.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         System.out.println("FUNCTION: EditTheCatInfo ended its run");
         System.out.println("---------------------------------------------------------");
@@ -1357,7 +1356,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
                 System.out.println("Cat name was edited, new name is: " + catStorage[i]);
 
-                editTool.dispose();
+                EditTool.dispose();
 
                 break;
 
@@ -1601,6 +1600,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(petInformationButton)) started its run");
 
             setEnabled(false);
+            catInfo.setEnabled(false);
             petInformationFrame.setVisible(true);
 
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(petInformationButton)) ended its run");
@@ -1631,8 +1631,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             tempisCatBought1 = true;
 
-            PetShop.setEnabled(false);
             setEnabled(false);
+            PetShop.setEnabled(false);
 
             catInfo.setVisible(true);
 
@@ -1654,8 +1654,8 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             tempisCatBought2 = true;
 
-            PetShop.setEnabled(false);
             setEnabled(false);
+            PetShop.setEnabled(false);
 
             catInfo.setVisible(true);
 
@@ -1674,8 +1674,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
 
             tempisCatBought3 = true;
 
-            PetShop.setEnabled(false);
             setEnabled(false);
+            PetShop.setEnabled(false);
+
 
             catInfo.setVisible(true);
 
@@ -1692,10 +1693,12 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(cat4Buy)) started its run, calling the LoadImageCat Function");
 
-            tempisCatBought4 = true;
 
             setEnabled(false);
             PetShop.setEnabled(false);
+            tempisCatBought4 = true;
+
+
 
             catInfo.setVisible(true);
 
@@ -1712,8 +1715,11 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(buyCat)) started its run, calling the CatTransaction Function");
 
-            CatTransaction(100);
+
+            setEnabled(true);
             PetShop.setEnabled(true);
+
+            CatTransaction(100);
 
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(buyCat)) ended its run");
             System.out.println("---------------------------------------------------------");
@@ -1724,9 +1730,11 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(cancelBuy)) started its run, calling the BooleanDisabler Function");
 
+
+            setEnabled(true);
+            PetShop.setEnabled(true);
             BooleanDisabler();
 
-            PetShop.setEnabled(true);
 
 
             boughtCatShowIcon.setVisible(false);
@@ -1745,7 +1753,11 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if (e.getSource().equals(editCatInfo)) started its run, calling the EditTheCatInfo Function");
 
-            EditTheCatInfo();
+            setEnabled(false);
+            catInfo.setEnabled(false);
+            petInformationFrame.setEnabled(false);
+            EditTool();
+
 
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(cancelBuy)) ended its run");
             System.out.println("---------------------------------------------------------");
@@ -1763,6 +1775,7 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             isCatEdited[2] = false;
             isCatEdited[3] = false;
             setEnabled(true);
+            catInfo.setEnabled(true);
             petInformationFrame.dispose();
 
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(closeCatInfo)) ended its run");
@@ -1778,6 +1791,10 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(saveCat)) started its run, calling the CatEditFeature");
 
+            setEnabled(true);
+            catInfo.setEnabled(true);
+            petInformationFrame.setEnabled(true);
+
             CatEditFeature();
 
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(saveCat)) ended its run");
@@ -1789,7 +1806,9 @@ public class StartGameplayForm extends JFrame implements ActionListener, WindowL
             System.out.println("---------------------------------------------------------");
             System.out.println("ACTION PERFORMED: if(e.getSource().equals(cancelSave)) started its run");
 
-            editTool.dispose();
+            EditTool.dispose();
+            setEnabled(true);
+            catInfo.setEnabled(true);
 
             System.out.println("ACTION PERFORMED:  if(e.getSource().equals(cancelSave)) ended its run");
             System.out.println("---------------------------------------------------------");
